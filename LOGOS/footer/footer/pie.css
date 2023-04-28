@@ -1,0 +1,17 @@
+.footer{
+    margin-top: 100px;
+    padding: 40px;
+    color: #fff;
+    background-color: #011c39;
+}
+
+.content{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+.features{
+    padding-right: 50px;
+    padding-left: 50px;
+}
