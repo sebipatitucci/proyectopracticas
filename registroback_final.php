@@ -1,37 +1,27 @@
 <?php
-
-include("conex.php");
-
-if (isset($_POST['registrarse'])) {
-    if (
-        strlen($_POST['nombre'] >= 1) &&
-        strlen($_POST['telefono'] >= 1) &&
-        strlen($_POST['date'] >= 1) &&
-        strlen($_POST['correo'] >= 1) &&
-        strlen($_POST['contraseña'] >= 1)
-    ) {
-
-        $name = $_POST['nombre'];
-        $telefono = $_POST['telefono'];
-        $date = date("d/m/y");
-        $email = $_POST['correo'];
-        $password = $_POST['contraseña'];
-        $consulta = "INSERT INTO `users`(`nombre`, `telefono`, `fecha_nac`, `email`, `contraseña`) 
-                             VALUES ('$name', '$telefono', '$date', '$email', '$password')";
-
-        $resultado = mysqli_query($conex, $consulta);
-
-        if ($resultado) {
+    include("conex.php");
+    if ('POST' == $_SERVER['REQUEST_METHOD']) {
+        if (isset($_POST['nombre']) && isset($_POST['correo']) && isset($_POST['contraseña']) &&
+            isset($_POST['telefono']) && isset($_POST['date']) ){
+                
             
-            echo "<div class='ok animate__animated animate__fadeInLeft'>Te has registrado correctamente!</div>";
+            $nombre = $_POST['nombre'];
+            $email = $_POST['correo'];
+            $contrasenia = $_POST['contraseña'];
+            $telefono = $_POST['telefono'];
+            $date = $_POST['date'];
             
-        } else {
-            echo "<div class='bad animate__animated animate__fadeInLeft'>Error en la autentificación</div>";
+    
+            $consulta = "INSERT INTO usuarios (nombre, email, contrasenia, telefono, fecha_nac) 
+                        VALUES ('$nombre', '$email', '$contrasenia', '$telefono', '$date')";
+            $resultado = mysqli_query($conex, $consulta);
+            
+            if ($resultado) {
+                echo "<div class='ok animate__animated animate__fadeInLeft'>¡HAZ SIDO REGISTRADO!</div>";
+            } else {
+                echo "<div class='bad animate__animated animate__fadeInLeft'>¡HUBO UN ERROR!</div>";
+            }
+            $conex->close();
         }
-    }else {
-        echo "<div class='bad animate__animated animate__fadeInLeft'>Error en la autentificación</div>";
     }
-}
-
-
 ?>

@@ -3,23 +3,21 @@
 session_start();
 
 $correo = $_POST['correo'];
-$contraseña = $_POST['contraseña'];
+$contrasenia = $_POST['contraseña'];
 
 
 $_SESSION['email'] = $correo;
 
 include("conex.php");
 
-$query = "SELECT * FROM users where email = '$correo' and contraseña = '$contraseña' ";
+$query = "SELECT * FROM usuarios where email = '$correo' and contrasenia = '$contrasenia' ";
 $result = mysqli_query($conex, $query);
 
 $filas = mysqli_num_rows($result);
 
 if($filas){
-    header("location:proyecto.html");
+    header("location:index.php");
 }else{
-    ?>
-    <?php
     include("loginfinal.php");
     
     echo "<div class='bad animate__animated animate__fadeInLeft'>Error en la autentificación</div>";

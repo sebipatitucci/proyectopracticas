@@ -5,20 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio de sesión</title>
-    <link rel="stylesheet" href="../Proyecto/CSS/new_login.css">
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
+    <link rel="stylesheet" href="CSS/new_login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/eb576a252a.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body style="background-image: url(IMAGENES/Caution.jpg)">
     
     <div class="main-container">
         <div class="left-container">
-            <img src="./Logo proyecto.png" alt="" class="animate__animated animate__zoomIn">
-            <h1 class="animate__animated animate__zoomIn">Save a Life</h1>
+            <img src="IMAGENES/Logo proyecto.png" alt="" class="animate__animated animate__zoomIn">
         </div>
         <div class="right-container">
             <form action="loginback.php" method="POST">
@@ -33,7 +29,7 @@
                     <label for="floatingPassword">Contraseña</label>
                     
                 </div>
-                <input type="submit" value="INICIAR SESIÓN" id="btn-login">
+                <input type="submit" value="INGRESAR" id="btn-login">
             </form>
             
         </div>
