@@ -1,32 +1,36 @@
 nav{
     background-color: rgb(4, 45, 92);
+    border-bottom: solid 4px black;
 }
 
 .container{
     display: flex;
+    
 }
 
 
 #container-logo{
     width: 50%;
+
 }
 
 div img{
     width: 200px;
-    height: 200px; 
+    height: 200px;
+    
 }
 
 #container-nav{
-    width: 500px;
-    text-align: end;  
+    width: 50%;
+    text-align: end;
+    
 }
-
 .nav-content{
     display: inline-block;
     margin-top: 80px;
     margin-right: 50px;
     text-decoration: none;
-    color: white;
+    color: rgb(255, 255, 255);
     font-size: 20px;
     transition: 1s;
 }
@@ -83,8 +87,7 @@ main div input:hover{
 #img-main{
     width: 380px;
     height: 420px;
-    border-radius: 3px;
-    box-shadow: -5px 5px 5px 2px #d1d5db;
+    box-shadow: 5px 5px 5px 2px #abadb1;
 }
 
 section{
@@ -123,7 +126,8 @@ section{
 .col-7 img{
     height: 350px;
     width: 500px;
-    box-shadow: 5px 5px 5px 2px #d1d5db;
+    border-radius: 0;
+    box-shadow: 5px 5px 5px 2px #abadb1;
     
 }
 
@@ -152,20 +156,21 @@ section{
     padding-top: 50px;
 }
 
-.codigo{
-    display: flex;
-    text-align: center;
-    list-style: center;
-}
-
-.content{
+#contenedor-denuncia{
     margin-top: 40px;
     display: flex;
+    width: 100%;
+    justify-content:center;
+}
+
+#texto-denuncia{  
+    margin-left: 20px;
+    text-align: center;
 }
 
 footer{
     margin-top: 100px;
-    background-color: rgb(4, 45, 92);
+    background-color: rgb(4, 45, 92);;
     color: white;
     padding-top: 25px;
 }
@@ -179,4 +184,3 @@ footer{
     padding-top: 80px;
     font-size: 18px;
 }
-

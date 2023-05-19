@@ -84,6 +84,19 @@ body{
     color: white;
     border: solid 2px white;
 }
+
+.ok{
+    margin-top: 20px;
+    display: block;
+    text-align: center;
+	width: 100%;
+	padding: 12px;
+	background-color: #1e6;
+	color: #fff;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .bad{
     margin-top: 20px;
     display: block;

@@ -70,16 +70,12 @@
 
         <h2 id="latest-news">Últimas denuncias</h2>
         <div class="container">
-            <div class="row">
-                <div class="codigo">
-                    
-                    <div class="content"> <?php include("mostrar.php") ?></div>
-                        
-                </div>
-            </div>
+        
+            <?php include("mostrar.php") ?>
+ 
         </div>
     </section>
-
+   
     <footer>
         <div class="container">
         <div class="row">

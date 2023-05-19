@@ -53,10 +53,11 @@
                 </div>
                 <input type="submit" value="Denunciar" id="btn-denunciar">
             </form>
-            
 
-            
-            <?php
+        </div>
+    </div>
+
+    <?php
                 include("conex.php");
 
                 if ('POST' == $_SERVER['REQUEST_METHOD']) {
@@ -86,9 +87,6 @@
                     }
                 }
             ?>
-
-        </div>
-    </div>
 
 </body>
 </html>
