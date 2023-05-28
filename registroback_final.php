@@ -24,4 +24,12 @@
             $conex->close();
         }
     }
+
+    session_start();
+    if(!isset($_SESSION['id']) && !isset($_SESSION['name']) ){
+        //header('location: registrofinal.php');
+    }
+    else{
+        header("location: index.php");
+    }
 ?>

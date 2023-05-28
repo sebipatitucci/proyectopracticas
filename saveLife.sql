@@ -17,7 +17,9 @@ fecha DATE NOT NULL,
 hora TIME NOT NULL,
 descripcion VARCHAR(300) NOT NULL,
 idUsuario INT(100) NOT NULL,
-PRIMARY KEY (idEventos));
+PRIMARY KEY (idEventos),
+CONSTRAINT fk_idUsuario FOREIGN KEY (idUsuario) REFERENCES usuarios (idUsuario));
 
+DROP TABLE eventos
 SELECT * FROM usuarios
 SELECT * FROM eventos

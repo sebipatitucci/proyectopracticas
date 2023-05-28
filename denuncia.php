@@ -1,3 +1,12 @@
+<?php
+    session_start();
+    if(!isset($_SESSION['id']) && !isset($_SESSION['name']) ){
+        header("location: index.php");
+    }
+    else{
+        //header('location: denuncia.php');
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,24 +40,24 @@
                 </div>
 
                 <div class="form-floating">
-                    <input type="text" class="form-control" id="floatingLocalidad" placeholder="localidad" name="localidad">
+                    <input type="text" class="form-control" id="floatingLocalidad" placeholder="localidad" name="localidad" required class="inputs">
                     <label for="floatingLocalidad">Localidad</label>
 
                 </div>
                 <div class="form-floating">
-                    <input type="text" class="form-control" id="floatingCalle" placeholder="calle" name="calle">
+                    <input type="text" class="form-control" id="floatingCalle" placeholder="calle" name="calle" required class="inputs">
                     <label for="floatingCalle">Calle</label>
                 </div>
                 <div class="form-floating">
-                    <input type="date" class="form-control" id="floatingFecha" placeholder="fecha" name="fecha">
+                    <input type="date" class="form-control" id="floatingFecha" placeholder="fecha" name="fecha" required class="inputs">
                     <label for="floatingFecha">Fecha</label>
                 </div>
                 <div class="form-floating">
-                    <input type="time" class="form-control" id="floatingHora" placeholder="horario" name="hora">
-                    <label for="floatingHora">Horario</label>
+                    <input type="time" class="form-control" id="floatingHora" placeholder="horario" name="hora" required class="inputs">
+                    <label for="floatingHora">Horario</label> 
                 </div>
                 <div class="form-floating">
-                    <input type="text" class="form-control" id="floatingDescripcion" placeholder="descripcion" name="descripcionEvento">
+                    <input type="text" class="form-control" id="floatingDescripcion" placeholder="descripcion" name="descripcionEvento" required class="inputs">
                     <label for="floatingDescripcion">Descripcion del evento</label>
                 </div>
                 <input type="submit" value="Denunciar" id="btn-denunciar">
@@ -71,10 +80,10 @@
                         $date = $_POST['fecha'];
                         $time = $_POST['hora'];
                         $descripcion = $_POST['descripcionEvento'];
-                        
+                        $idUsuario = $_SESSION['id'];
 
-                        $consulta = "INSERT INTO eventos (tipo, localidad, calle, fecha, hora, descripcion) 
-                                    VALUES ('$opciones', '$localidad', '$calle', '$date', '$time', '$descripcion')";
+                        $consulta = "INSERT INTO eventos (tipo, localidad, calle, fecha, hora, descripcion, idUsuario) 
+                                    VALUES ('$opciones', '$localidad', '$calle', '$date', '$time', '$descripcion', '$idUsuario')";
                         $resultado = mysqli_query($conex, $consulta);
                         
                         if ($resultado) {

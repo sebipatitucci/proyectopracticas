@@ -1,3 +1,13 @@
+<?php
+    session_start(); 
+    if(isset($_SESSION['id']) && isset($_SESSION['name']) ){
+        header("location: index.php");
+    }
+    else{
+        //header('location: loginfinal.php');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,12 +30,12 @@
             <form action="loginback.php" method="POST">
                 <h3>Iniciar Sesión</h3>
                 <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="floatingInput" placeholder="Ingrese su correo electrónico" name="correo">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="Ingrese su correo electrónico" name="correo" required class="inputs">
                     <label for="floatingInput">Correo electrónico</label>
                     
                 </div>
                 <div class="form-floating">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Ingrese su contraseña" name="contraseña">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Ingrese su contraseña" name="contraseña" required class="inputs">
                     <label for="floatingPassword">Contraseña</label>
                     
                 </div>

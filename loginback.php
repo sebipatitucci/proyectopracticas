@@ -1,21 +1,19 @@
 <?php 
 
-session_start();
-
-$correo = $_POST['correo'];
+$email = $_POST['correo'];
 $contrasenia = $_POST['contraseña'];
-
-
-$_SESSION['email'] = $correo;
 
 include("conex.php");
 
-$query = "SELECT * FROM usuarios where email = '$correo' and contrasenia = '$contrasenia' ";
+$query = "SELECT * FROM usuarios where email = '$email' and contrasenia = '$contrasenia' ";
 $result = mysqli_query($conex, $query);
 
-$filas = mysqli_num_rows($result);
+$filas = mysqli_fetch_array($result);
 
 if($filas){
+    session_start();
+    $_SESSION['id'] = $filas['idUsuario'];
+    $_SESSION['name'] = $filas['nombre'];
     header("location:index.php");
 }else{
     include("loginfinal.php");

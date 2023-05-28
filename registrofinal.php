@@ -21,23 +21,23 @@
             <form action="registroback_final.php" method="POST">
                 <h3>Registrarse</h3>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingInput" placeholder="Ingrese su correo electrónico" name="nombre">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="Ingrese su correo electrónico" name="nombre" required class="inputs">
                     <label for="floatingInput">Nombre y Apellido</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="floatingInput" placeholder="Ingrese su correo electrónico" name="correo">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="Ingrese su correo electrónico" name="correo" required class="inputs">
                     <label for="floatingInput">Correo electrónico</label>
                 </div>
                 <div class="form-floating">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Ingrese su contraseña" name="contraseña">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Ingrese su contraseña" name="contraseña" required class="inputs">
                     <label for="floatingPassword">Contraseña</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="number" class="form-control" id="floatingInput" placeholder="Ingrese su correo electrónico" name="telefono">
+                    <input type="number" class="form-control" id="floatingInput" placeholder="Ingrese su correo electrónico" name="telefono" required class="inputs">
                     <label for="floatingInput">Teléfono</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="date" class="form-control" id="floatingInput" placeholder="Ingrese su correo electrónico" name="date">
+                    <input type="date" class="form-control" id="floatingInput" placeholder="Ingrese su correo electrónico" name="date" required class="inputs">
                     <label for="floatingInput">Fecha de nacimiento</label>
                 </div>
                 <input type="submit" value="REGISTRARSE" id="btn-registro" name="registrarse">

@@ -19,6 +19,7 @@
                 <a href="#main-container" class="nav-content">Inicio</a>
                 <a href="#about-us" class="nav-content">Acerca de</a>
                 <a href="denuncia.php" class="nav-content">Denunciar</a>
+                <a href="logout.php" class="nav-content">Salir</a>
             </div>
         </div>
     </nav>
@@ -30,8 +31,8 @@
                 <p>Personas lastimadas?</p>
                 <p>Incendios?</p>
                 <p>Cualquiera sea la emergencia, no dudes en realizar la denuncia.</p>
-                <a href="registrofinal.php"><input type="submit" value="Registrarme"></a>
-                <a href="loginfinal.php"><input type="button" value="Iniciar sesión"></a>
+                <a href="registrofinal.php"><input type="submit" value="Registrarme" id="reg"></a>
+                <a href="loginfinal.php"><input type="button" value="Iniciar sesión" id="ini"></a>
             </div>
             <div id="main-image-container">
                 <img src="IMAGENES/cars.jpg" alt="" id="img-main">
