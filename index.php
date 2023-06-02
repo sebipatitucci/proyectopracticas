@@ -10,7 +10,7 @@
     <script src="https://kit.fontawesome.com/eb576a252a.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <nav>
+    <!-- <nav>
         <div class="container">
             <div id="container-logo">
                 <img src="IMAGENES/Logo proyecto.png" alt="Logo de Save a Life">
@@ -22,7 +22,40 @@
                 <a href="logout.php" class="nav-content">Salir</a>
             </div>
         </div>
+    </nav> -->
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <img src="IMAGENES/Logo proyecto.png" alt="Logo de Save a Life" id="nav-img">
+            <div class="container-lista">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                <a class="nav-link" id="color1" aria-current="page" href="#main-container">Inicio</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" id="color2" href="#about-us">Acerca de</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" id="color3" href="denuncia.php">Denunciar</a>
+                </li>
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="color4" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Perfil
+                </a>
+                <ul class="dropdown-menu" style="border: solid 3px black">
+                    <li><a class="dropdown-item " href="mis-denuncias.php">Configuración</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item " href="logout.php">Cerrar sesión</a></li>
+                </ul>
+                </li>
+                
+            </ul>
+            </div> 
+            </div>
+        </div>
     </nav>
+
     <main>
         <div class="container">
             <div id="main-container">

@@ -49,7 +49,7 @@ body{
 
 #btn-denunciar{
     position: relative;
-    margin: 10px 120px;
+    margin: 10px 125px;
     width: 150px;
     height: 40px;
     color: rgb(3, 59, 73);
@@ -68,7 +68,7 @@ body{
 
 #btn-login{
     position: relative;
-    margin: 10px 120px;
+    margin: 40px 125px;
     padding: 5px;
     width: 150px;
     color: rgb(3, 59, 73);
