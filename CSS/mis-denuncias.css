@@ -164,15 +164,15 @@ div img{
 }
 
 #contenedor-denuncia{
+    width: 100%;
     margin-top: 0px;
     display: flex;
-    width: 100%;
-    justify-content:center;
 }
 
 #texto-denuncia{  
+    width: 70%;
+    padding-left: 10px; 
     margin-left: 20px;
-    text-align: center;
 }
 
 

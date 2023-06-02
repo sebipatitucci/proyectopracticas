@@ -17,11 +17,16 @@
             $resultado = mysqli_query($conex, $consulta);
             
             if ($resultado) {
-                echo "<div class='ok animate__animated animate__fadeInLeft'>¡HAZ SIDO REGISTRADO!</div>";
+                ?>
+                <div class='ok animate__animated animate__fadeInLeft'>¡HAZ SIDO REGISTRADO!</div>
+                <?php
+                // echo "<div class='ok animate__animated animate__fadeInLeft'>¡HAZ SIDO REGISTRADO!</div>";
             } else {
                 echo "<div class='bad animate__animated animate__fadeInLeft'>¡HUBO UN ERROR!</div>";
             }
             $conex->close();
+        }else{
+            echo "<div class='bad animate__animated animate__fadeInLeft'>¡HUBO UN ERROR!</div>";
         }
     }
 

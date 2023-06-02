@@ -63,17 +63,17 @@
             <div class="main-right-col">
                 
                 <h3>Mis últimas denuncias</h3>
-
-                <div class="card" style="margin-top: 20px; border: solid 1px black;">
+                <?php include("mostrarmis-denuncias.php") ?>
+                <!-- <div class="card" style="margin-top: 20px; border: solid 1px black;">
                     <div class="card-body">
-                    <?php include("mostrar.php") ?>
+                      LINK PHP -->
                       <!-- <h5 class="card-title">Special title treatment</h5>
-                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> 
                       <a href="#" class="btn btn-primary">Eliminar</a>
                       <a href="#" class="btn btn-primary">Modificar</a>
                       <a href="#" class="btn btn-primary" style="float: right;">Ver en el mapa</a>
                     </div>                 
-                </div>
+                </div> -->
 
             </div>
             
