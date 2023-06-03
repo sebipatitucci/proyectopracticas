@@ -50,7 +50,7 @@
         <div class="col-3" id="left-col"> 
            
            <a href="mis-denuncias.php" class="nav-items">Mis denuncias</a>
-           <a href="user.php" class="nav-items">Mi Perfil</a>                   
+           <a href="perfil.php" class="nav-items">Mi Perfil</a>                   
            <a href="notificaciones.php" class="nav-items">Notificaciones</a>  
            
         </div>
@@ -61,21 +61,12 @@
                 <div class="content-right-col">
                     <ul class="list-type">
                         <li class="list-element">Nombre y apellido</li>
+                        <li class="list-element">Correo Eléctronico</li>
                         <li class="list-element">Teléfono</li>
-                        <li class="list-element">Email</li>
                         <li class="list-element">Fecha de nacimiento</li>
                     </ul>
-
-                    <?php 
-                        $sql = "SELECT 'nombre', 'telefono', 'fecha_nac', 'email' from users where $";
-                    ?>
-
-                    <ul class="list-type">
-                        <li class="right-list-element">----------</li>
-                        <li class="right-list-element">----------</li>
-                        <li class="right-list-element">----------</li>
-                        <li class="right-list-element">----------</li>
-                    </ul>
+                    <?php include("perfil-back.php")?>
+                
 
                 </div>
 

@@ -56,25 +56,23 @@
         </div>
         <div class="col-9" id="right-col">
             <div class="content-right-col">
-                <img src="" alt="" id="img-perfil">
-                <h4>Nombre y apellido</h4>
-            </div>
 
-            <div class="main-right-col">
-                
+                <?php 
+                  include("conex.php");
+                  session_start();
+                  $consulta = "SELECT u.nombre FROM usuarios U, eventos E where u.nombre = '$_SESSION[name]'";
+                  $resultado = mysqli_query($conex, $consulta);
+                  $row = mysqli_fetch_array($resultado);
+                  if($row){
+                    echo "<h4>Bienvenido, $row[nombre]!</h4>";
+                  }
+                 $conex->close();
+                ?>
+
+            </div>
+            <div class="main-right-col">   
                 <h3>Mis últimas denuncias</h3>
                 <?php include("mostrarmis-denuncias.php") ?>
-                <!-- <div class="card" style="margin-top: 20px; border: solid 1px black;">
-                    <div class="card-body">
-                      LINK PHP -->
-                      <!-- <h5 class="card-title">Special title treatment</h5>
-                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> 
-                      <a href="#" class="btn btn-primary">Eliminar</a>
-                      <a href="#" class="btn btn-primary">Modificar</a>
-                      <a href="#" class="btn btn-primary" style="float: right;">Ver en el mapa</a>
-                    </div>                 
-                </div> -->
-
             </div>
             
         </div>

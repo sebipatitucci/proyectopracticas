@@ -1,5 +1,6 @@
 <?php
     include("conex.php");
+    session_start();
     if ('POST' == $_SERVER['REQUEST_METHOD']) {
         if (isset($_POST['nombre']) && isset($_POST['correo']) && isset($_POST['contraseña']) &&
             isset($_POST['telefono']) && isset($_POST['date']) ){
@@ -17,10 +18,7 @@
             $resultado = mysqli_query($conex, $consulta);
             
             if ($resultado) {
-                ?>
-                <div class='ok animate__animated animate__fadeInLeft'>¡HAZ SIDO REGISTRADO!</div>
-                <?php
-                // echo "<div class='ok animate__animated animate__fadeInLeft'>¡HAZ SIDO REGISTRADO!</div>";
+                echo "<div class='ok animate__animated animate__fadeInLeft'>¡HAZ SIDO REGISTRADO!</div>";
             } else {
                 echo "<div class='bad animate__animated animate__fadeInLeft'>¡HUBO UN ERROR!</div>";
             }
@@ -30,7 +28,7 @@
         }
     }
 
-    session_start();
+    // session_start();
     if(!isset($_SESSION['id']) && !isset($_SESSION['name']) ){
         //header('location: registrofinal.php');
     }

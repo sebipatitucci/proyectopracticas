@@ -1,8 +1,8 @@
 <?php 
     include("conex.php");
-
+   
     
-    $consulta = "SELECT E.* FROM USUARIOS U, eventos E WHERE E.idUsuario = U.idUsuario";
+    $consulta = "SELECT E.* FROM USUARIOS U, eventos E WHERE e.idUsuario = u.idUsuario and u.nombre= '$_SESSION[name]'";
 
     $resultado = mysqli_query($conex, $consulta);
   

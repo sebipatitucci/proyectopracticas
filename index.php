@@ -10,19 +10,6 @@
     <script src="https://kit.fontawesome.com/eb576a252a.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <!-- <nav>
-        <div class="container">
-            <div id="container-logo">
-                <img src="IMAGENES/Logo proyecto.png" alt="Logo de Save a Life">
-            </div>
-            <div id="container-nav">
-                <a href="#main-container" class="nav-content">Inicio</a>
-                <a href="#about-us" class="nav-content">Acerca de</a>
-                <a href="denuncia.php" class="nav-content">Denunciar</a>
-                <a href="logout.php" class="nav-content">Salir</a>
-            </div>
-        </div>
-    </nav> -->
 
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
