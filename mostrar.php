@@ -22,9 +22,13 @@
                     echo " ".$i['hora'];
                     echo "<br>" .$i['descripcion'];
                     echo "<br>";
+                    
                 ?>
+                
+              
             </div>
         </div>
+     
         <?php
         $denuncias++;
         if($denuncias == 5){
