@@ -77,7 +77,7 @@ div img{
 #left-col{
     background-color: #CCCCCC;
     border-right: solid 2px black;
-    height: 800px;
+    height: 820px;
     display: flex;
     text-align: center;
     justify-content: center;
@@ -131,7 +131,7 @@ div img{
     margin-right: auto;
     margin-top: 50px;
     margin-bottom: 100px;
-    height: 360px;
+    height: 450px;
     display: flex;
     background-color: white;
     box-shadow: 1px 1px 10px 5px black;

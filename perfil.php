@@ -36,7 +36,7 @@
           <ul class="dropdown-menu" style="border: solid 3px black">
             <li><a class="dropdown-item " href="mis-denuncias.php">Configuración</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item " href="#">Cerrar sesión</a></li>
+            <li><a class="dropdown-item " href="logout.php">Cerrar sesión</a></li>
           </ul>
         </li>
         
@@ -62,6 +62,7 @@
                     <ul class="list-type">
                         <li class="list-element">Nombre y apellido</li>
                         <li class="list-element">Correo Eléctronico</li>
+                        <li class="list-element">Contraseña</li>
                         <li class="list-element">Teléfono</li>
                         <li class="list-element">Fecha de nacimiento</li>
                     </ul>
