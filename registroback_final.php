@@ -1,6 +1,6 @@
 <?php
     include("conex.php");
-    session_start();
+    //session_start();
     if ('POST' == $_SERVER['REQUEST_METHOD']) {
         if (isset($_POST['nombre']) && isset($_POST['correo']) && isset($_POST['contraseña']) &&
             isset($_POST['telefono']) && isset($_POST['date']) ){
@@ -11,12 +11,11 @@
             $contrasenia = $_POST['contraseña'];
             $telefono = $_POST['telefono'];
             $date = $_POST['date'];
-            
     
             $consulta = "INSERT INTO usuarios (nombre, email, contrasenia, telefono, fecha_nac) 
-                        VALUES ('$nombre', '$email', '$contrasenia', '$telefono', '$date')";
-            $resultado = mysqli_query($conex, $consulta);
-            
+                         VALUES ('$nombre', '$email', '$contrasenia', '$telefono', '$date')";
+            $resultado = mysqli_query($conex, $consulta);     
+
             if ($resultado) {
                 echo "<div class='ok animate__animated animate__fadeInLeft'>¡HAZ SIDO REGISTRADO!</div>";
             } else {

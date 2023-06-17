@@ -2,7 +2,8 @@
     include("conex.php");
     session_start();
 
-    $consulta = "SELECT nombre, email, contrasenia, telefono, fecha_nac FROM usuarios where nombre = '$_SESSION[name]' ";
+   // $consulta = "SELECT nombre, email, contrasenia, telefono, fecha_nac FROM usuarios where nombre = '$_SESSION[name]'";
+    $consulta = "SELECT nombre, email, contrasenia, telefono, fecha_nac FROM usuarios where '$_SESSION[id]' = idUsuario";
 
     $resultado = mysqli_query($conex, $consulta);
     $row = mysqli_fetch_array($resultado);

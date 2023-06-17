@@ -1,3 +1,13 @@
+<?php
+    session_start();
+    if(!isset($_SESSION['id']) && !isset($_SESSION['name']) ){
+
+        header("location: index.php");
+    }
+    else{
+        //header('location: denuncia.php');
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,8 +16,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Configuración</title>
     <link rel="stylesheet" href="./CSS/mis-denuncias.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/eb576a252a.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 </head>
 <body>
 
@@ -58,15 +68,17 @@
             <div class="content-right-col">
 
                 <?php 
+               
                   include("conex.php");
-                  session_start();
-                  $consulta = "SELECT u.nombre FROM usuarios U, eventos E where u.nombre = '$_SESSION[name]'";
+                  
+                  $consulta = "SELECT u.nombre FROM usuarios U, eventos E where u.nombre = '$_SESSION[name]' and '$_SESSION[id]' = u.idUsuario ";
                   $resultado = mysqli_query($conex, $consulta);
                   $row = mysqli_fetch_array($resultado);
                   if($row){
                     echo "<h4>Bienvenido, $row[nombre]!</h4>";
                   }
                  $conex->close();
+                
                 ?>
 
             </div>
