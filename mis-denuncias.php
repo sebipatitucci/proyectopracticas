@@ -39,7 +39,7 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" id="color4" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Perfil
+          <i class="fa-regular fa-user"></i>
           </a>
           <ul class="dropdown-menu" style="border: solid 3px black">
             <li><a class="dropdown-item " href="mis-denuncias.php">Configuración</a></li>

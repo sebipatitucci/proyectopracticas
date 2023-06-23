@@ -1,6 +1,5 @@
 <?php 
     include("conex.php");
-
  
     $consulta = "SELECT *FROM eventos ORDER BY idEventos desc ";
 

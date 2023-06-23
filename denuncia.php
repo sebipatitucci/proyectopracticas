@@ -31,10 +31,13 @@
                 <h3>DENUNCIAR</h3>
                 <div class="form-floating mb-3">
                     <select name="opciones" id="floatingOpciones" class="form-control">
-                        <option></option>
-                        <option>Opcion 1</option>
-                        <option>Opción 2</option>
-                        <option>Opción 3</option>
+                        <option>Accidentes de tráfico</option>
+                        <option>Robo</option>
+                        <option>Incendio</option>
+                        <option>Incidencia callejera</option>
+                        <option>Problema de salud</option>
+                        <option>Desaparición</option>
+                        <option>Violencia doméstica</option>
                     </select>
                     <label for="floatingOpciones">Seleccione una opcion</label>     
                 </div>

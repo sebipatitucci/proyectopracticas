@@ -160,12 +160,14 @@ div img{
     width: 100%;
     margin-top: 0px;
     display: flex;
+    
 }
 
 #texto-denuncia{  
     width: 70%;
     padding-left: 10px; 
     margin-left: 20px;
+    
 }
 
 

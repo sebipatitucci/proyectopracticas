@@ -11,33 +11,33 @@
     <script src="https://kit.fontawesome.com/eb576a252a.js" crossorigin="anonymous"></script>
 </head>
 <body style="background-image: url(IMAGENES/person.jpg); background-blend-mode:soft-light; background-color: #222222">
-    
+
     <div class="main-container">
         <div class="left-container">
             <img src="IMAGENES/Logo proyecto.png" alt="" class="animate__animated animate__zoomIn">
             <a href="loginfinal.php"><input type="button" value="INICIAR SESIÓN"></a>
         </div>
         <div class="right-container">
-            <form action="registroback_final.php" method="POST">
+            <form action="registrofinal.php" method="POST">
                 <h3>Registrarse</h3>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingInput" placeholder="Ingrese su correo electrónico" name="nombre" required class="inputs">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="Ingrese su nombre" name="nombre" required >
                     <label for="floatingInput">Nombre y Apellido</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="floatingInput" placeholder="Ingrese su correo electrónico" name="correo" required class="inputs">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="Ingrese su correo electrónico" name="correo" required >
                     <label for="floatingInput">Correo electrónico</label>
                 </div>
                 <div class="form-floating">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Ingrese su contraseña" name="contraseña" required class="inputs">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Ingrese su contraseña" name="contraseña" required >
                     <label for="floatingPassword">Contraseña</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="number" class="form-control" id="floatingInput" placeholder="Ingrese su correo electrónico" name="telefono" required class="inputs">
+                    <input type="text" class="form-control" id="floatingInput" pattern="[0-9]{2}-[0-9]{4}-[0-9]{4}" title="XX-XXXX-XXXX" placeholder="XX-XXXX-XXXX" name="telefono" required>
                     <label for="floatingInput">Teléfono</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="date" class="form-control" id="floatingInput" placeholder="Ingrese su correo electrónico" name="date" required class="inputs">
+                    <input type="date" class="form-control" id="floatingInput" placeholder="Ingrese su correo electrónico" name="date" required >
                     <label for="floatingInput">Fecha de nacimiento</label>
                 </div>
                 <input type="submit" value="REGISTRARSE" id="btn-registro" name="registrarse">
@@ -46,11 +46,9 @@
         </div>
     </div>
 
-    <?php 
-            
-    //include("registroback_final.php");
+    <?php
     include("conex.php");
-    //session_start();
+    session_start();
     if ('POST' == $_SERVER['REQUEST_METHOD']) {
         if (isset($_POST['nombre']) && isset($_POST['correo']) && isset($_POST['contraseña']) &&
             isset($_POST['telefono']) && isset($_POST['date']) ){
@@ -84,6 +82,7 @@
     else{
         header("location: index.php");
     }
-    ?>
+?>
+
 </body>
 </html>

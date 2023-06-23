@@ -12,7 +12,7 @@ foreach ($resultado as $i) {
     <div class="card" style="margin-top: 20px; border: solid 1px black;">
         <div class="card-body">
             <div id="contenedor-denuncia">
-                <img src="IMAGENES/Earth.png" alt="">
+                <img src="IMAGENES/Call.png" alt="">
                 <div id="texto-denuncia">
                     <?php
 
