@@ -11,7 +11,14 @@
   </style>
 </head>
 <body>
-  
+  <?php 
+    include("conex.php");
+    
+    $provincia = $_GET['idProvincia'];
+    $localidad = $_GET['idLocalidad'];
+
+?>
+
   <div id="map"></div>
 
   <script>

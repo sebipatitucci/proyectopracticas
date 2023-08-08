@@ -77,7 +77,6 @@ div img{
 #left-col{
     background-color: #F1F3F6;
     border-right: solid 2px black;
-    border-top: solid 2px black;
     height: 820px;
     display: flex;
     text-align: center;

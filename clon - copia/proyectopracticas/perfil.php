@@ -64,11 +64,11 @@
                 <h5>Datos de cuenta</h5>
                 <div class="content-right-col">
                     <ul class="list-type">
-                        <li class="list-element">Nombre y apellido</li>
-                        <li class="list-element">Correo Eléctronico</li>
-                        <li class="list-element">Contraseña</li>
-                        <li class="list-element">Teléfono</li>
-                        <li class="list-element">Fecha de nacimiento</li>
+                        <li class="list-element"><b>Nombre y apellido</b></li>
+                        <li class="list-element"><b>Correo Eléctronico</b></li>
+                        <li class="list-element"><b>Contraseña</b></li>
+                        <li class="list-element"><b>Teléfono</b></li>
+                        <li class="list-element"><b>Fecha de nacimiento</b></li>
                     </ul>
                     <?php include("perfil-back.php")?>
                 
@@ -114,5 +114,6 @@
             </div>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
 </html>

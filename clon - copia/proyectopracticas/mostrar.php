@@ -1,7 +1,15 @@
 <?php 
     include("conex.php");
  
-    $consulta = "SELECT * FROM eventos e, accidentes a ORDER BY idEventos desc";
+    $consulta = "SELECT e.fecha, e.hora, e.descripcion,e.idEventos, a.descripcion as dAccidente, p.descripcion as pDescripcion,
+                 pr.descripcion as prDescripcion,  l.descripcion as lDescripcion
+                 FROM USUARIOS U, eventos E, paises p, provincias pr, accidentes a, localidades l
+                 WHERE e.idUsuario = u.idUsuario
+                 and e.idPais = p.idPais 
+                 and pr.idProvincia = e.idProvincia
+                 and e.idAccidente = a.idAccidente
+                 and e.idLocalidad = l.idLocalidad
+                 ORDER BY idEventos desc";
 
     $resultado = mysqli_query($conex, $consulta);
   
@@ -16,10 +24,9 @@
                     // echo '<img src="IMAGENES/Earth.png" alt="">' ;  
                     include("maps.php");  
                     echo "<br>";
-                    echo "<br>" .$i['descripcion'];
-                    echo "<br>" .$i['idPais'];
-                    echo "<br>".$i['idProvincia'];
-                    echo "<br>".$i['idLocalidad'];
+                    echo "<br>" .$i['dAccidente'];
+                    echo "<br>" .$i['pDescripcion'];
+                    echo "<br>" .$i['prDescripcion'];
                     echo "<br> ".$i['fecha'];
                     echo "<br> ".$i['hora'];
                     echo "<br>" .$i['descripcion'];
