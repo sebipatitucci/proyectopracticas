@@ -11,7 +11,8 @@
 </head>
 <body>
     <?php 
-    include("header.php");
+        session_start();
+        include("header.php");
     ?>
     <!-- <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
@@ -61,6 +62,31 @@
             </div>
         </div>
     </main>
+
+    <?php 
+        if( !isset($_SESSION['id']) && !isset($_SESSION['name']) ){
+            echo "<script type='text/javascript'>
+                var idDenuncia = document.getElementById('btnDenuncia');
+
+                idDenuncia.onclick = function(){
+                    alert('Debe iniciar sesion para realizar una denuncia');
+                }</script>"; 
+    
+        }else{
+            echo"<script type='text/javascript'>
+                var btnRegistro = document.getElementById('reg');
+                var btnInicio = document.getElementById('ini');
+            
+                btnInicio.onclick = function(){
+                    alert('Ya inicio sesion, no puede volver a hacerlo');
+                }
+                btnRegistro.onclick = function(){
+                    alert('Debe cerrar sesion para poder registrar otro usuario');
+                }
+                </script>"; 
+        }
+    ?>
+
     <section>
         <div class="container">
             <div class="row">

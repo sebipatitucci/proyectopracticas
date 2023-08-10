@@ -61,9 +61,9 @@
         
         <div class="col-3" id="left-col"> 
            
-           <a href="mis-denuncias.php" class="nav-items">Mis denuncias</a>
-           <a href="perfil.php" class="nav-items">Mi Perfil</a>                   
-           <a href="notificaciones.php" class="nav-items">Notificaciones</a>   
+           <a href="mis-denuncias.php" class="nav-items"><i class="fa-solid fa-truck-medical"></i> Mis denuncias</a>
+           <a href="perfil.php" class="nav-items"><i class="fa-solid fa-user"></i> Mi Perfil</a>                   
+           <a href="notificaciones.php" class="nav-items"><i class="fa-solid fa-bell"></i> Notificaciones</a>   
            
         </div>
         <div class="col-9" id="right-col">

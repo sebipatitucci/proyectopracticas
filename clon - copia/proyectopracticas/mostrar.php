@@ -1,9 +1,10 @@
 <?php 
     include("conex.php");
  
-    $consulta = "SELECT e.fecha, e.hora, e.descripcion,e.idEventos, a.descripcion as dAccidente, p.descripcion as pDescripcion,
-                 pr.descripcion as prDescripcion,  l.descripcion as lDescripcion
-                 FROM USUARIOS U, eventos E, paises p, provincias pr, accidentes a, localidades l
+    $consulta = "SELECT DATE_FORMAT(e.fecha, '%d-%m-%Y') as fecha, DATE_FORMAT(e.hora, '%h:%m') as hora, e.descripcion,e.idEventos, 
+                 a.descripcion as dAccidente, p.descripcion as pDescripcion,
+                 pr.descripcion as prDescripcion, l.descripcion as lDescripcion
+                 FROM usuarios u, eventos e, paises p, provincias pr, accidentes a, localidades l
                  WHERE e.idUsuario = u.idUsuario
                  and e.idPais = p.idPais 
                  and pr.idProvincia = e.idProvincia
@@ -27,6 +28,7 @@
                     echo "<br>" .$i['dAccidente'];
                     echo "<br>" .$i['pDescripcion'];
                     echo "<br>" .$i['prDescripcion'];
+                    echo ", " .$i['lDescripcion'];
                     echo "<br> ".$i['fecha'];
                     echo "<br> ".$i['hora'];
                     echo "<br>" .$i['descripcion'];

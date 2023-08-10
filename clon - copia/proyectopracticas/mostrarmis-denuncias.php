@@ -2,7 +2,7 @@
 include("conex.php");
 
 // $consulta = "SELECT E.* FROM USUARIOS U, eventos E WHERE e.idUsuario = u.idUsuario and '$_SESSION[id]' = u.idUsuario";
-$consulta = "SELECT E.*, a.descripcion as dAccidente, p.descripcion as pDescripcion,
+$consulta = "SELECT DATE_FORMAT(e.fecha, '%d-%m-%Y') as fecha, DATE_FORMAT(e.hora, '%h:%m') as hora, e.descripcion,e.idEventos, a.descripcion as dAccidente, p.descripcion as pDescripcion,
              pr.descripcion as prDescripcion, l.descripcion as lDescripcion
              FROM USUARIOS U, eventos E, localidades l, paises p, provincias pr, accidentes a 
              WHERE e.idUsuario = u.idUsuario
@@ -29,7 +29,7 @@ foreach ($resultado as $i) {
                     echo "<p><b> Provincia: </b>" . $i['prDescripcion'] . "</p>";
                     echo "<p><b> Fecha: </b>" . $i['fecha'] . "</p>";
                     echo "<p><b> Hora: </b>" . $i['hora'] . "</p>";
-                    echo "<p><b> Comentarios: </b>" . $i['lDescripcion'] . "</p>";
+                    echo "<p><b> Comentarios: </b>" . $i['descripcion'] . "</p>";
                     echo "<br>";
                     ?>
                 </div>
