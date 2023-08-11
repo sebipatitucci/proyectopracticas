@@ -1,8 +1,11 @@
 <?php 
 include("conex.php");
-$id = $_GET['idEventos'];
 
-$consulta = "DELETE FROM eventos where idEventos = '$id'";;
+session_start();
+
+$consulta = "DELETE FROM eventos e, usuarios u
+             where e.idUsuario = u.idUsuario 
+             and e.idUsuario = '$_SESSION[id]'";
 
 $resultado = mysqli_query($conex, $consulta);
         

@@ -24,9 +24,9 @@
                 <i class="fa-regular fa-user"></i>
                 </a>
                 <ul class="dropdown-menu" style="border: solid 3px black">
-                    <li><a class="dropdown-item " href="mis-denuncias.php">Configuración</a></li>
+                    <li><a class="dropdown-item " href="mis-denuncias.php" id="configuracion">Configuración</a></li>
                     <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item " href="logout.php">Cerrar sesión</a></li>
+                    <li><a class="dropdown-item " href="logout.php" id="btnSesion">Cerrar sesión</a></li>
                 </ul>
             </li>
           </ul>

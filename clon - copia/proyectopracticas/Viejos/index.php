@@ -11,8 +11,7 @@
 </head>
 <body>
     <?php 
-        session_start();
-        include("header.php");
+    include("header.php");
     ?>
     <!-- <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
@@ -62,41 +61,6 @@
             </div>
         </div>
     </main>
-
-    <?php 
-        if( !isset($_SESSION['id']) && !isset($_SESSION['name']) ){
-            echo "<script type='text/javascript'>
-                var idDenuncia = document.getElementById('btnDenuncia');
-                var btnDenuncia = document.getElementById('configuracion');
-                var btnSesion = document.getElementById('btnSesion');
-
-                idDenuncia.onclick = function(){
-                    alert('Debe iniciar sesion para realizar una denuncia');
-                }
-                btnDenuncia.onclick = function(){
-                    alert('Debe iniciar sesion para acceder a las configuraciones');
-                }
-                btnSesion.onclick = function(){
-                    alert('No ha iniciado sesion');
-                }
-
-                </script>"; 
-                
-        }else{
-            echo"<script type='text/javascript'>
-                var btnRegistro = document.getElementById('reg');
-                var btnInicio = document.getElementById('ini');
-            
-                btnInicio.onclick = function(){
-                    alert('Ya inicio sesion, no puede volver a hacerlo');
-                }
-                btnRegistro.onclick = function(){
-                    alert('Debe cerrar sesion para poder registrar otro usuario');
-                }
-                </script>"; 
-        }
-    ?>
-
     <section>
         <div class="container">
             <div class="row">
@@ -128,8 +92,8 @@
 
 
         <h2 id="latest-news">Últimas denuncias</h2>
-       
         <div class="container">
+        
             <?php include("mostrar.php") ?>
  
         </div>
