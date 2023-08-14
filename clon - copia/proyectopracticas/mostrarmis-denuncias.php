@@ -31,7 +31,7 @@ foreach($resultado as $i) {
                     ?>
                 </div>
             </div>
-            <a href="eliminar.php" class="btn btn-primary">Eliminar</a>
+            <a href="eliminar.php?borrar=<?php echo $i['idEventos']; ?>" class="btn btn-primary">Eliminar</a>
             <a href="#" class="btn btn-primary">Modificar</a>
             <a href="http://maps.google.com/?q=<?php echo $i['latitud']; ?>,+<?php echo $i['longitud']; ?>" class="btn btn-primary" style="float: right;">Ver en el mapa</a>
         </div>

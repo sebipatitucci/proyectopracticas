@@ -1,19 +1,17 @@
 <?php 
 include("conex.php");
 
-session_start();
+$id = $_GET['borrar'];
 
-$consulta = "DELETE FROM eventos e, usuarios u
-             where e.idUsuario = u.idUsuario 
-             and e.idUsuario = '$_SESSION[id]'";
+$consulta = "DELETE FROM eventos where idEventos = '$id'";
 
 $resultado = mysqli_query($conex, $consulta);
         
 if($resultado){
-    header("location: mostrarmis-denuncias.php");
+    header("location: mis-denuncias.php");
 }else{
-    
+    echo "No se pudo borrar";
 }
-    
+
 
 ?>
