@@ -8,6 +8,7 @@ telefono VARCHAR(12) NOT NULL,
 fecha_nac DATE NOT NULL,
 PRIMARY KEY(idUsuario));
 
+ALTER TABLE usuarios DROP INDEX contrasenia
 
 /*CREATE TABLE eventos(
 idEventos INT(100) AUTO_INCREMENT,
@@ -19,7 +20,7 @@ hora TIME NOT NULL,
 descripcion VARCHAR(300) NOT NULL,
 idUsuario INT(100) NOT NULL,
 PRIMARY KEY (idEventos),
-FOREIGN KEY (idUsuario) REFERENCES usuarios(idUsuario));*/
+FOREIGN KEY (idUsuario) REFERENCES usuarios(idUsuario));
 
 CREATE TABLE eventos(
 idEventos INT(100) AUTO_INCREMENT,
@@ -36,7 +37,21 @@ FOREIGN KEY(idAccidente) REFERENCES accidentes (idAccidente),
 FOREIGN KEY(idPais) REFERENCES paises (idPais),
 FOREIGN KEY(idProvincia) REFERENCES provincias (idProvincia),
 FOREIGN KEY(idLocalidad) REFERENCES localidades (idLocalidad),
+FOREIGN KEY(idUsuario) REFERENCES usuarios (idUsuario));*/
+
+CREATE TABLE eventos(
+idEventos INT(100) AUTO_INCREMENT,
+idAccidente INT(100),
+latitud FLOAT NOT NULL,
+longitud FLOAT NOT null,
+fecha DATE NOT NULL,
+hora TIME NOT NULL,
+descripcion VARCHAR(100) NOT NULL,
+idUsuario INT(100) NOT NULL,
+PRIMARY KEY(idEventos),
+FOREIGN KEY(idAccidente) REFERENCES accidentes (idAccidente),
 FOREIGN KEY(idUsuario) REFERENCES usuarios (idUsuario));
+
 
 CREATE TABLE paises(
 idPais INT(100) NOT NULL,
@@ -47756,14 +47771,6 @@ INSERT INTO `localidades` (`IDLocalidad`, `IDProvincia`, `Descripcion`, `CodigoP
 (47800, 237, 'San Isidro', 0, 47680, 0),
 (47801, 237, 'San Rafael', 0, 47680, 0);
 
-/* Borrar tablas */
-DROP TABLE usuarios
-DROP TABLE eventos
-DROP TABLE paises
-DROP TABLE provincias
-DROP TABLE localidades
-DROP TABLE accidentes
-
 /* Selects */
 SELECT * FROM usuarios
 SELECT * FROM eventos
@@ -47773,4 +47780,6 @@ SELECT * FROM localidades
 SELECT * FROM accidentes
 SELECT descripcion FROM provincias pro JOIN paises pa WHERE pro.idPais = pa.idPais
 
+ALTER TABLE eventos ADD COLUMN (latitud FLOAT);
+ALTER TABLE eventos ADD COLUMN (longitud FLOAT);
 
