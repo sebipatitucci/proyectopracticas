@@ -47781,5 +47781,6 @@ SELECT descripcion FROM provincias pro JOIN paises pa WHERE pro.idPais = pa.idPa
 
 ALTER TABLE eventos ADD COLUMN (latitud FLOAT);
 ALTER TABLE eventos ADD COLUMN (longitud FLOAT);
+ALTER TABLE eventos ADD COLUMN (estado INT(11) DEFAULT 1);
 
 SELECT * FROM eventos WHERE fecha between (now() - INTERVAL 5 DAY) AND now()
