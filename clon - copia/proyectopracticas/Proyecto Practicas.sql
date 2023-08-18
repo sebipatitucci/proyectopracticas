@@ -52,7 +52,6 @@ PRIMARY KEY(idEventos),
 FOREIGN KEY(idAccidente) REFERENCES accidentes (idAccidente),
 FOREIGN KEY(idUsuario) REFERENCES usuarios (idUsuario));
 
-
 CREATE TABLE paises(
 idPais INT(100) NOT NULL,
 descripcion VARCHAR(30) NOT NULL,
@@ -47783,3 +47782,4 @@ SELECT descripcion FROM provincias pro JOIN paises pa WHERE pro.idPais = pa.idPa
 ALTER TABLE eventos ADD COLUMN (latitud FLOAT);
 ALTER TABLE eventos ADD COLUMN (longitud FLOAT);
 
+SELECT * FROM eventos WHERE fecha between (now() - INTERVAL 5 DAY) AND now()
