@@ -21,7 +21,7 @@
   <?php include("conex.php");
 
   $query = "SELECT latitud, longitud, descripcion, u.nombre as nombre, DATE_FORMAT(fecha, '%d-%m-%Y') as fecha from eventos e, usuarios u
-            where e.idUsuario = u.idUsuario and fecha between (now() - INTERVAL 5 DAY) AND now()";
+            where e.idUsuario = u.idUsuario and fecha between (now() - INTERVAL 5 DAY) AND now() and estado = 1";
 
   $resultadoMapa = mysqli_query($conex, $query);
 

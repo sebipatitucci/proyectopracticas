@@ -8,7 +8,8 @@ $consulta = "SELECT DATE_FORMAT(e.fecha, '%d-%m-%Y') as fecha,
              FROM usuarios u, eventos e, accidentes a 
              WHERE e.idUsuario = u.idUsuario
              and e.idAccidente = a.idAccidente
-             and '$_SESSION[id]' = u.idUsuario";
+             and '$_SESSION[id]' = u.idUsuario 
+             and estado = 1";
 
 $resultado = mysqli_query($conex, $consulta);
 
