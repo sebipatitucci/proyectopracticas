@@ -1,12 +1,12 @@
 <?php
     session_start();
-    if(!isset($_SESSION['id']) && !isset($_SESSION['name']) ){
+     if(!isset($_SESSION['id']) && !isset($_SESSION['name']) ){
 
         header("location: index.php");
-    }
-    else{
+     }
+     else{
         //header('location: denuncia.php');
-    }
+     }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,38 +23,6 @@
 <?php 
     include("header.php");
     ?>
-
-<!-- <nav class="navbar navbar-expand-lg">
-  <div class="container-fluid">
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <img src="IMAGENES/Logo proyecto.png" alt="Logo de Save a Life" id="nav-img">
-    <div class="container-lista">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" id="color1" aria-current="page" href="index.php#main-container">Inicio</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="color2" href="index.php#about-us">Acerca de</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="color3" href="denuncia.php">Denunciar</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="color4" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <i class="fa-regular fa-user"></i>
-          </a>
-          <ul class="dropdown-menu" style="border: solid 3px black">
-            <li><a class="dropdown-item " href="mis-denuncias.php">Configuración</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item " href="#">Cerrar sesión</a></li>
-          </ul>
-        </li>
-        
-      </ul>
-      </div> 
-    </div>
-  </div>
-</nav> -->
 
 
     <div class="row">
@@ -86,7 +54,7 @@
             </div>
             <div class="main-right-col">   
                 <h3>Mis últimas denuncias</h3>
-                <?php include("mostrarmis-denuncias.php") ?>
+                <?php include("mostrarmis-denuncias.php"); ?>
             </div>
             
         </div>

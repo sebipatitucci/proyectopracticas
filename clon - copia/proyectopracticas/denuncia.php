@@ -1,13 +1,10 @@
 <?php
-require ('conex.php');
+include('conex.php');
 	
-$query = "SELECT idPais, descripcion FROM paises ORDER BY descripcion";
-$resultado=$conex->query($query);
 session_start();
 if (!isset($_SESSION['id']) && !isset($_SESSION['name'])) {
     header("location: index.php");
 } else {
-
     //header('location: denuncia.php');
 }
 
@@ -22,40 +19,15 @@ if (!isset($_SESSION['id']) && !isset($_SESSION['name'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Realizar denuncia</title>
     <script language="javascript" src="../js/code.jquery.com_jquery-3.7.0.min.js"></script>
-    <link rel="stylesheet" href="CSS/denuncia copy.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="CSS/denuncia.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/eb576a252a.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=REM&display=swap" rel="stylesheet">
+     <link rel="preconnect" href="https://fonts.googleapis.com"> 
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=REM&display=swap" rel="stylesheet"> 
 
-    <script language="javascript">
-			$(document).ready(function(){
-				$("#cbx_estado").change(function () {
-
-					$('#cbx_localidad').find('option').remove().end().append('<option value="whatever"></option>').val('whatever');
-					
-					$("#cbx_estado option:selected").each(function () {
-						idPais = $(this).val();
-						$.post("includes/getProvincias.php", { idPais: idPais }, function(data){
-							$("#cbx_municipio").html(data);
-						});            
-					});
-				})
-			});
-			
-			$(document).ready(function(){
-				$("#cbx_municipio").change(function () {
-					$("#cbx_municipio option:selected").each(function () {
-						idProvincia = $(this).val();
-						$.post("includes/getLocalidades.php", { idProvincia: idProvincia }, function(data){
-							$("#cbx_localidad").html(data);
-						});            
-					});
-				})
-			});
-		</script>
+    
 
 </head>
 
@@ -88,12 +60,12 @@ if (!isset($_SESSION['id']) && !isset($_SESSION['name'])) {
                 </div>
 
                 <div class="form-floating">
-                    <input type="text" class="form-control" id="latitud" placeholder="Latitud" name="latitud"  class="inputs">
+                    <input type="text" class="form-control" id="latitud" placeholder="Latitud" name="latitud"  class="inputs" readonly>
                     <label for="floatingLatitud">Latitud</label>
                 </div>
 
                 <div class="form-floating">
-                    <input type="text" class="form-control" id="longitud" placeholder="longitud" name="longitud"  class="inputs">
+                    <input type="text" class="form-control" id="longitud" placeholder="longitud" name="longitud"  class="inputs" readonly>
                     <label for="floatingLongitud">Longitud</label>
                 </div>
               
@@ -116,7 +88,6 @@ if (!isset($_SESSION['id']) && !isset($_SESSION['name'])) {
     </div>
 
     <?php
-    // include("conex.php");
 
     if ('POST' == $_SERVER['REQUEST_METHOD']) {
         if (
@@ -133,9 +104,8 @@ if (!isset($_SESSION['id']) && !isset($_SESSION['name'])) {
             $descripcion = $_POST['descripcionEvento'];
             $idUsuario = $_SESSION['id'];
 
-            $consulta = "INSERT INTO eventos (idAccidente, latitud, longitud, fecha,
-                         hora, descripcion, idUsuario) 
-                        VALUES ('$opciones', '$latitud', '$longitud', '$fecha', '$hora', '$descripcion', '$idUsuario')";
+            $consulta = "INSERT INTO eventos (idAccidente, latitud, longitud, fecha, hora, descripcion, idUsuario)
+                         VALUES ('$opciones', '$latitud', '$longitud', '$fecha', '$hora', '$descripcion', '$idUsuario')";
             $resultado = mysqli_query($conex, $consulta);
 
             if ($resultado) {
@@ -146,12 +116,15 @@ if (!isset($_SESSION['id']) && !isset($_SESSION['name'])) {
 
             $conex->close();
         }
+        
     }
+
+    
     ?>
     <script>
 
 function initMap() {
-  var latitud = -34.6626;
+  var latitud = -34.6526;
   var longitud = -58.4159;
   
   coordenadas = {
@@ -173,11 +146,6 @@ function generarMapa(coordenadas){
     draggable: true,
     position: new google.maps.LatLng(coordenadas.lat, coordenadas.lng)
   });
-
-  const btnLatitud = document.getElementById('latitud');
-  btnLatitud.disabled = true;
-  const btnLongitud = document.getElementById('longitud');
-  btnLongitud.disabled = true;
 
   marcador.addListener('dragend', function(event){
     document.getElementById("latitud").value = this.getPosition().lat();

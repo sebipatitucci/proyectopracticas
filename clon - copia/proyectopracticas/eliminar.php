@@ -12,6 +12,6 @@ if($resultado){
 }else{
     echo "No se pudo borrar";
 }
-
+    
 
 ?>

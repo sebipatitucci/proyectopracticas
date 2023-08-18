@@ -18,14 +18,13 @@ $denuncias = 0;
 
 
 
-foreach ($resultado as $i) {
+/*foreach ($resultado as $i) {
 ?>
-    
     <div id="contenedor-denuncia">
         <div id="texto-denuncia">
 
       <?php
-            include("maps.php");
+            
             echo "<br>";
             echo "<br> <b>Accidente: </b>" . $i['dAccidente'];
             echo "<br> <b>Fecha: </b>" . $i['fecha'];
@@ -41,11 +40,11 @@ foreach ($resultado as $i) {
 
 <?php
     $denuncias++;
-    if ($denuncias == 5) {
+    if ($denuncias == 3) {
         break;
     }
 }
-
+*/
 $conex->close();
 
 ?>
