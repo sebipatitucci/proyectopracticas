@@ -60,8 +60,8 @@
             $telefono = $_POST['telefono'];
             $date = $_POST['date'];
     
-            $consulta = "INSERT INTO usuarios (nombre, email, contrasenia, telefono, fecha_nac) 
-                         VALUES ('$nombre', '$email', '$contrasenia', '$telefono', '$date')";
+            $consulta = "INSERT INTO usuarios (nombre, email, contrasenia, telefono, fecha_nac, idPerfil) 
+                         VALUES ('$nombre', '$email', '$contrasenia', '$telefono', '$date', '2')";
             $resultado = mysqli_query($conex, $consulta);     
 
             if ($resultado) {

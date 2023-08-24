@@ -10,6 +10,15 @@ PRIMARY KEY(idUsuario));
 
 ALTER TABLE usuarios DROP INDEX contrasenia
 
+
+CREATE TABLE Perfiles (
+idPerfil             INTEGER (10) NOT NULL,
+descripcion         VARCHAR (100) NOT NULL,
+PRIMARY KEY (idPerfil));
+
+INSERT INTO perfiles VALUES (1, "administrador")
+INSERT INTO perfiles VALUES (2, "usuario registrado")
+
 /*CREATE TABLE eventos(
 idEventos INT(100) AUTO_INCREMENT,
 tipo VARCHAR(30) NOT NULL,
@@ -47777,10 +47786,13 @@ SELECT * FROM paises
 SELECT * FROM provincias
 SELECT * FROM localidades
 SELECT * FROM accidentes
+SELECT * FROM perfiles
 SELECT descripcion FROM provincias pro JOIN paises pa WHERE pro.idPais = pa.idPais
 
 ALTER TABLE eventos ADD COLUMN (latitud FLOAT);
 ALTER TABLE eventos ADD COLUMN (longitud FLOAT);
 ALTER TABLE eventos ADD COLUMN (estado INT(11) DEFAULT 1);
-
+ALTER TABLE usuarios ADD COLUMN (idPerfil INT(10) );
+ALTER TABLE usuarios ADD FOREIGN KEY (idPerfil) REFERENCES perfiles (idPerfil) 
 SELECT * FROM eventos WHERE fecha between (now() - INTERVAL 5 DAY) AND now()
+
