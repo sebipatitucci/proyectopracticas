@@ -13,6 +13,7 @@
       border: solid 1px black;
       margin-top: 50px;
       margin-bottom: 50px;
+      box-shadow: 5px 5px 5px 2px #abadb1;;
     }
   </style>
 </head>
@@ -21,7 +22,7 @@
   <?php include("conex.php");
 
   $query = "SELECT latitud, longitud, descripcion, u.nombre as nombre, DATE_FORMAT(fecha, '%d-%m-%Y') as fecha from eventos e, usuarios u
-            where e.idUsuario = u.idUsuario and fecha between (now() - INTERVAL 5 DAY) AND now() and estado = 1";
+            where e.idUsuario = u.idUsuario and fecha between (now() - INTERVAL 5 DAY) AND now() and estado = '1'";
 
   $resultadoMapa = mysqli_query($conex, $query);
 
@@ -32,51 +33,45 @@
    
     function initMap() {
       // Coordenadas del centro del mapa
-      const center = {
-        lat: -34.6625,
-        lng: -58.35
+      const mapOptions = {
+          center: { lat: -34.61, lng: -58.38 }, // Coordenadas de Buenos Aires
+          zoom: 13,
+        };
 
-      };
+        const map = new google.maps.Map(
+          document.getElementById("map"),
+          mapOptions
+        );
 
-      // Crear el mapa
-      const map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 12,
-        center: center
-      });
 
-      // Marcadores para los puntos cardinales
-      var markers = [
-        <?php
-      foreach ($resultadoMapa as $datos) {
-      ?>
-        ,{
-          position: {
-            lat: <?php echo $datos['latitud']; ?>,
-            lng: <?php echo $datos['longitud']; ?>
-          },
-          title: '<?php echo $datos['descripcion']; ?>, denuncia realizada por <?php echo $datos['nombre']; ?>, el dia <?php echo $datos['fecha']; ?> ',
-        },
-     
-        <?php
+        const heatMapData = [
+          <?php
+          foreach ($resultadoMapa as $datos) {
+          ?>
+          ,{ location: new google.maps.LatLng(<?php echo $datos['latitud']; ?>, <?php echo $datos['longitud'];?>), weight: 0.5 },
+          <?php
       }
-      ?>
-        // Agrega más puntos cardinales aquí si lo deseas
-      ];
+      ?>   
+          // Agrega más puntos de muestra aquí
+        ]; 
+      // Marcadores para los puntos cardinales
+  
       
 
-        // Agregar los marcadores al mapa
-        markers.forEach(function(marker) {
-          new google.maps.Marker({
-            position: marker.position,
-            map: map,
-            title: marker.title
-          });
+      const heatmap = new google.maps.visualization.HeatmapLayer({
+          data: heatMapData,
+          map: map,
         });
+        
+      heatmap.set("radius", 20);
+
     }
     
   </script>
 
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzkgT0RFUq4nueCZBxig7rpOjoQoPM1XY&callback=initMap"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzkgT0RFUq4nueCZBxig7rpOjoQoPM1XY&libraries=visualization&callback=initMap"></script>
+
+
 </body>
 
 </html>
