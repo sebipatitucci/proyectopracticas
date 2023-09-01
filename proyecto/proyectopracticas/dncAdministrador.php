@@ -11,6 +11,7 @@
 </head>
 <body>
 <?php 
+    session_start();
     include("headerAdmin.php");
     ?>
 

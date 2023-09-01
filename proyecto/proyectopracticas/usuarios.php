@@ -11,6 +11,7 @@
 </head>
 <body>
 <?php 
+session_start();
     include("headerAdmin.php");
     ?>
 
@@ -29,7 +30,7 @@
 
             </div> -->
             <div class="main-right-col">   
-                <h3>Usuarios Registrados</h3>
+                <h3>Usuarios registrados</h3>
                 <?php 
                     include("conex.php"); 
                     $consulta = "SELECT *FROM usuarios";
