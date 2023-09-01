@@ -1,0 +1,199 @@
+/* .navbar{
+    background-color: rgb(4, 45, 92);
+    height: 150px;
+    width: 100%;
+    
+}
+
+#nav-img{
+    width: 200px;
+    height: 200px;
+    margin-left: 100px;
+}
+
+.container-lista{
+    width: 100%;
+    margin-right: 10%;
+}
+
+ul{  
+    justify-content: end;   
+    font-size: 20px;
+}
+
+#color1, #color2, #color3, #color4 {
+    color: aliceblue;
+}
+
+li{
+    margin-left: 15px;
+    
+}
+
+
+
+
+
+
+ ORIGINAL 
+
+nav{
+    background-color: rgb(4, 45, 92);
+    border-bottom: solid 4px black;
+} */
+
+.container{
+    display: flex;
+    
+}
+
+
+#container-logo{
+    width: 50%;
+
+}
+
+div img{
+    width: 200px;
+    height: 200px;
+    
+}
+
+#container-nav{
+    width: 50%;
+    text-align: end;
+    
+}
+
+.nav-content{
+    display: inline-block;
+    margin-top: 80px;
+    margin-right: 50px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    transition: 1s;
+}
+
+.nav-content:hover{
+    transform: scale(1.2);
+    
+}
+
+#left-col{
+    background-color: #F1F3F6;
+    border-right: solid 2px black;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.nav-items{
+    padding: 10px;
+    padding-bottom: 15px ;
+    list-style: none;
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    display: block;
+    margin-right: -12px;
+}
+
+.nav-items:hover{
+    background-color: rgb(157, 155, 155);
+    transition: 0.5s;
+        
+}
+
+.row{
+    width: 100%;
+}
+
+#right-col{
+    background-color: white;
+    position: relative;
+    padding-bottom: 100px;
+}
+
+.content-right-col{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    height: 160px;
+    display: flex;
+    background-color: white;
+    box-shadow: 1px 1px 10px 5px rgb(128, 125, 125);
+    border-radius: 20px;
+}
+
+.content-right-col h4{
+    padding-top: 8%;
+    padding-left: 10%;
+    font-size: 30px;
+}
+
+.content-right-col h5{
+    position: absolute;
+    padding-top: 10%;
+    left: 270px;
+    font-size: 20px;
+}
+
+.main-right-col{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 80px;
+    display: block;
+    border-radius: 20px;
+    margin-bottom: 100px;
+} 
+
+.main-right-col h3{
+    text-align: center;
+    color: black;
+    margin-bottom: 50px;
+}
+
+.card{
+    box-shadow: 1px 1px 10px 3px rgb(128, 125, 125);
+}
+
+#contenedor-denuncia{
+    width: 100%;
+    margin-top: 0px;
+    display: flex;
+    
+}
+
+#texto-denuncia{  
+    width: 70%;
+    padding-left: 10px; 
+    margin-left: 20px;
+    
+}
+
+
+footer{
+    position: relative;
+    bottom: 0;
+    background-color: rgb(4, 45, 92);;
+    color: white;
+    padding-top: 25px;
+    
+}
+
+#footer-content{
+    width: 70%;
+}
+
+#footer-content p{
+    padding-left: 20%;
+    padding-top: 80px;
+    font-size: 18px;
+}
+
