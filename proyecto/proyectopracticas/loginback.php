@@ -14,7 +14,14 @@ if($filas){
     session_start();
     $_SESSION['id'] = $filas['idUsuario'];
     $_SESSION['name'] = $filas['nombre'];
-    header("location:index.php");
+    $_SESSION['perfil'] = $filas['idPerfil'];  
+    
+    if($_SESSION['perfil'] == 2){
+        header("location:index.php");
+    }else{
+        header("location: indexAdmin.php");
+    }
+
 }else{
     include("loginfinal.php");
     
