@@ -13,6 +13,12 @@
 <?php 
     session_start();
     include("headerAdmin.php");
+    if ($_SESSION['perfil'] == 1) {
+        
+    }else{
+        header("location: index.php");
+    }
+    
     ?>
 
 

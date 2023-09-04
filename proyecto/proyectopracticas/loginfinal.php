@@ -2,6 +2,9 @@
     session_start(); 
     if(isset($_SESSION['id']) && isset($_SESSION['name']) ){
         header("location: index.php");
+        if ($_SESSION['perfil'] == 1) {
+            header("location: indexAdmin.php");
+        }
     }
     else{
         //header('location: loginfinal.php');

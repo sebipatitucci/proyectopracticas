@@ -11,8 +11,14 @@
 </head>
 <body>
 <?php 
-session_start();
+    session_start();
     include("headerAdmin.php");
+
+    if ($_SESSION['perfil'] == 1) {
+        
+    }else{
+        header("location: index.php");
+    }
     ?>
 
 
@@ -27,16 +33,19 @@ session_start();
         </div>
         <div class="col-9" id="right-col">
             <!-- <div class="content-right-col">
-
+                
             </div> -->
             <div class="main-right-col">   
                 <h3>Usuarios registrados</h3>
                 <?php 
-                    include("conex.php"); 
-                    $consulta = "SELECT *FROM usuarios";
+                    include("conex.php");
+                     
+                    $consulta = "SELECT *FROM usuarios WHERE idPerfil = 2 AND estado = 1";
                     $resultado = mysqli_query($conex, $consulta);
-
+                    //$_SESSION['sessionUser'] = $i['idPerfil'];
+                   
                     
+
                         ?>
                         <table class="table table-hover">
                         <thead>
@@ -55,8 +64,9 @@ session_start();
                             <td>$i[nombre]</td>
                             <td>$i[email]</td>
                             <td>$i[telefono]</td>
-                            <td><a href='#?borrar=<?php echo $i[idUsuario]; ?>' <i class='fa-solid fa-trash' style='color: #ff2b05;'></i></a></td> 
+                            <td><a href='eliminarUsuario.php?borrar=$i[idUsuario] ' <i class='fa-solid fa-trash' style='color: #ff2b05;'></i></a></td> 
                             </tr>";
+                            
                         }
                         ?>
             
