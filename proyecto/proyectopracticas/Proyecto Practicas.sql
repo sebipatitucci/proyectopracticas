@@ -10,44 +10,6 @@ PRIMARY KEY(idUsuario));
 
 ALTER TABLE usuarios DROP INDEX contrasenia
 
-
-CREATE TABLE Perfiles (
-idPerfil             INTEGER (10) NOT NULL,
-descripcion         VARCHAR (100) NOT NULL,
-PRIMARY KEY (idPerfil));
-
-INSERT INTO perfiles VALUES (1, "administrador")
-INSERT INTO perfiles VALUES (2, "usuario registrado")
-
-/*CREATE TABLE eventos(
-idEventos INT(100) AUTO_INCREMENT,
-tipo VARCHAR(30) NOT NULL,
-localidad VARCHAR(25) NOT NULL,
-calle VARCHAR(35) NOT NULL,
-fecha DATE NOT NULL,
-hora TIME NOT NULL,
-descripcion VARCHAR(300) NOT NULL,
-idUsuario INT(100) NOT NULL,
-PRIMARY KEY (idEventos),
-FOREIGN KEY (idUsuario) REFERENCES usuarios(idUsuario));
-
-CREATE TABLE eventos(
-idEventos INT(100) AUTO_INCREMENT,
-idAccidente INT(100),
-idPais int(100) NOT NULL,
-idProvincia int(100) NOT NULL,
-idLocalidad int(100) NOT NULL,
-fecha DATE NOT NULL,
-hora TIME NOT NULL,
-descripcion VARCHAR(100) NOT NULL,
-idUsuario INT(100) NOT NULL,
-PRIMARY KEY(idEventos),
-FOREIGN KEY(idAccidente) REFERENCES accidentes (idAccidente),
-FOREIGN KEY(idPais) REFERENCES paises (idPais),
-FOREIGN KEY(idProvincia) REFERENCES provincias (idProvincia),
-FOREIGN KEY(idLocalidad) REFERENCES localidades (idLocalidad),
-FOREIGN KEY(idUsuario) REFERENCES usuarios (idUsuario));*/
-
 CREATE TABLE eventos(
 idEventos INT(100) AUTO_INCREMENT,
 idAccidente INT(100),
@@ -61,42 +23,16 @@ PRIMARY KEY(idEventos),
 FOREIGN KEY(idAccidente) REFERENCES accidentes (idAccidente),
 FOREIGN KEY(idUsuario) REFERENCES usuarios (idUsuario));
 
-CREATE TABLE paises(
-idPais INT(100) NOT NULL,
-descripcion VARCHAR(30) NOT NULL,
-orden INT(11) DEFAULT NULL,
-activo TINYINT(1),
-PRIMARY KEY(idPais)
-);
-
-CREATE TABLE provincias(
-idProvincia INT(11) NOT NULL,
-idPais int(11),
-descripcion VARCHAR(50),
-orden INT(11) NOT NULL,
-PRIMARY KEY(idProvincia),
-FOREIGN KEY(idPais) REFERENCES paises(idPais)
-);
-
-CREATE TABLE localidades(
-idLocalidad INT (11) NOT NULL,
-idProvincia INT(11),
-descripcion VARCHAR(60),
-codigoPostal INT(11) NOT NULL,
-idPartido INT (11) DEFAULT NULL,
-esPartido TINYINT(1),
-PRIMARY KEY(idLocalidad),
-FOREIGN KEY (idProvincia) REFERENCES provincias(idProvincia)
-);
-
-ALTER TABLE `localidades`
-  ADD CONSTRAINT `FKLocalidadesIDPartido` FOREIGN KEY (`IDPartido`) REFERENCES `localidades` (`IDLocalidad`) ON DELETE CASCADE ON UPDATE CASCADE
-
 CREATE TABLE accidentes(
 idAccidente INT(11) NOT NULL,
 descripcion VARCHAR (60) NOT NULL,
 PRIMARY KEY(idAccidente)
 );
+
+CREATE TABLE Perfiles (
+idPerfil INTEGER (10) NOT NULL,
+descripcion VARCHAR (100) NOT NULL,
+PRIMARY KEY (idPerfil));
 
 /*Insercion de datos*/
 
@@ -109,6 +45,9 @@ INSERT INTO accidentes VALUES
 (6, 'Desaparicion'),
 (7, 'Violencia domestica'),
 (8, 'Otro')
+
+INSERT INTO perfiles VALUES (1, "administrador");
+INSERT INTO perfiles VALUES (2, "usuario")
 
 INSERT INTO `paises` (`idPais`, `descripcion`, `orden`, `activo`) VALUES
 (1, 'Argentina', 10, 1),
@@ -47793,10 +47732,11 @@ ALTER TABLE eventos ADD COLUMN (latitud FLOAT);
 ALTER TABLE eventos ADD COLUMN (longitud FLOAT);
 ALTER TABLE eventos ADD COLUMN (estado INT(11) DEFAULT 1);
 ALTER TABLE usuarios ADD COLUMN (idPerfil INT(10) );
-ALTER TABLE usuarios ADD FOREIGN KEY (idPerfil) REFERENCES perfiles (idPerfil)
+ALTER TABLE usuarios ADD FOREIGN KEY (idPerfil) REFERENCES perfiles (idPerfil) 
 ALTER TABLE usuarios ADD COLUMN (estado INT(11) DEFAULT 1); 
+ALTER TABLE usuarios DROP COLUMN estado
+ALTER TABLE usuarios ADD COLUMN (uEstado INT(11) DEFAULT 1); 
+
 SELECT * FROM eventos WHERE fecha between (now() - INTERVAL 5 DAY) AND now()
-INSERT INTO usuarios VALUES ('', 'Gonza', 'gonza@gmail.com', 'gonza', '2018-12-09' , '2001-10-31', '1', '1');
-UPDATE eventos 
-         SET estado = 1 
-         where estado = 0
+UPDATE usuarios SET idPerfil =  WHERE idUsuario = 1
+UPDATE eventos SET estado = 1 where estado = 0
