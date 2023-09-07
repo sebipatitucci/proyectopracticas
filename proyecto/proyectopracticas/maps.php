@@ -21,9 +21,9 @@
 <body>
   <?php include("conex.php");
 
-  $query = "SELECT latitud, longitud, descripcion, u.nombre as nombre, DATE_FORMAT(fecha, '%d-%m-%Y') as fecha from eventos e, usuarios u
-            where e.idUsuario = u.idUsuario and estado = '1'";
-//                            fecha between (now() - INTERVAL 5 DAY) AND now()
+  $query = "SELECT estado, uEstado, latitud, longitud, descripcion, u.nombre as nombre, DATE_FORMAT(fecha, '%d-%m-%Y') as fecha from eventos e, usuarios u
+            where e.idUsuario = u.idUsuario and estado = 1 and uEstado = 1 and idPerfil = 2";
+//                            
   $resultadoMapa = mysqli_query($conex, $query);
 
   ?>
@@ -35,7 +35,7 @@
       // Coordenadas del centro del mapa
       var mapOptions = {
           center: { lat: -34.61, lng: -58.38 }, // Coordenadas de Buenos Aires
-          zoom: 10,
+          zoom: 9,
           
         };
 

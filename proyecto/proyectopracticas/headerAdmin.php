@@ -36,7 +36,7 @@
           $resultado = mysqli_query($conex, $consulta);
           foreach($resultado as $i){
             $user = ucfirst($i['descripcion']);
-            echo "<p style='position: absolute; right: 220px; top: 8px; font-weight: bold'>$user<p>";
+            echo "<p style='position: absolute; right: 160px; top: 8px; font-weight: bold'>$user<p>";
           }
           ?>
     </nav>

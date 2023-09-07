@@ -1,46 +1,3 @@
-/* .navbar{
-    background-color: rgb(4, 45, 92);
-    height: 150px;
-    width: 100%;
-    
-}
-
-#nav-img{
-    width: 200px;
-    height: 200px;
-    margin-left: 100px;
-}
-
-.container-lista{
-    width: 100%;
-    margin-right: 10%;
-}
-
-ul{  
-    justify-content: end;   
-    font-size: 20px;
-}
-
-#color1, #color2, #color3, #color4 {
-    color: aliceblue;
-}
-
-li{
-    margin-left: 15px;
-    
-}
-
-
-
-
-
-
- ORIGINAL 
-
-nav{
-    background-color: rgb(4, 45, 92);
-    border-bottom: solid 4px black;
-} */
 
 .container{
     display: flex;
@@ -114,7 +71,7 @@ div img{
 #right-col{
     background-color: white;
     position: relative;
-    padding-bottom: 100px;
+    padding-bottom: 200px;
 }
 
 .content-right-col{
@@ -144,7 +101,7 @@ div img{
 }
 
 .main-right-col{
-    width: 70%;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 80px;

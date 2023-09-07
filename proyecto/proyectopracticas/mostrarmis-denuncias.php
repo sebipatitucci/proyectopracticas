@@ -23,18 +23,17 @@ foreach($resultado as $i) {
                 
                 <div id="texto-denuncia">
                     <?php
-                     
+                    $descripcion = ucfirst($i['descripcion']);
                     echo "<p><b> Tipo de accidente: </b>" . $i['dAccidente'] . "</p>";
                     echo "<p><b> Fecha: </b>" . $i['fecha'] . "</p>";
                     echo "<p><b> Hora: </b>" . $i['hora'] . "</p>";
-                    echo "<p><b> Comentarios: </b>" . $i['descripcion'] . "</p>";
+                    echo "<p><b> Comentarios: </b>" . $descripcion . "</p>";
                     echo "<br>";
                     ?>
                 </div>
             </div>
-            <a href="eliminar.php?borrar=<?php echo $i['idEventos']; ?>" class="btn btn-primary">Eliminar</a>
-            <a href="#" class="btn btn-primary">Modificar</a>
-            <a href="http://maps.google.com/?q=<?php echo $i['latitud']; ?>,+<?php echo $i['longitud']; ?>" class="btn btn-primary" style="float: right;">Ver en el mapa</a>
+            <a href="eliminar.php?borrar=<?php echo $i['idEventos']; ?>" class="btn btn-primary" style="margin-left: 5px;">Eliminar</a>
+            <a href="http://maps.google.com/?q=<?php echo $i['latitud']; ?>,+<?php echo $i['longitud']; ?>" class="btn btn-primary" style="float: right; margin-right: 5px;">Ver en el mapa</a>
         </div>
     </div>
 

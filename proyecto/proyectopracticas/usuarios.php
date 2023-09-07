@@ -40,7 +40,7 @@
                 <?php 
                     include("conex.php");
                      
-                    $consulta = "SELECT *FROM usuarios WHERE idPerfil = 2 AND estado = 1";
+                    $consulta = "SELECT *FROM usuarios WHERE idPerfil = 2 AND uEstado = 1";
                     $resultado = mysqli_query($conex, $consulta);
                     //$_SESSION['sessionUser'] = $i['idPerfil'];
                    
@@ -53,7 +53,7 @@
                             <th scope="col">Id</th>
                             <th scope="col">Nombre</th>
                             <th scope="col">Email</th>
-                            <th scope="col">Telefono</th>
+                            <th scope="col">Teléfono</th>
                           </tr>
                         </thead>
                         <tbody>

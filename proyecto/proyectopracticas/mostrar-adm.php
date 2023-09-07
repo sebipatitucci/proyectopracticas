@@ -5,9 +5,10 @@ $consulta = "SELECT DATE_FORMAT(e.fecha, '%d-%m-%Y') as fecha,
                     DATE_FORMAT(e.hora, '%h:%m') as hora, 
                     e.descripcion,e.idEventos, 
                     a.descripcion as dAccidente,
-                    e.latitud, e.longitud, u.nombre
+                    e.latitud, e.longitud, u.nombre, uEstado
                     FROM eventos e, usuarios u, accidentes a
                     WHERE e.estado = 1
+                    and uEstado = 1
                     AND u.idPerfil = 2
                     AND e.idUsuario = u.idUsuario
                     AND e.idAccidente = a.idAccidente";
@@ -30,11 +31,12 @@ $resultado = mysqli_query($conex, $consulta);
           <tr>
             <?php 
             foreach($resultado as $i){
+            $descripcion = ucfirst($i['descripcion']);
             echo "<th scope='row'>$i[idEventos]</th>
             <td>$i[dAccidente]</td>
             <td>$i[fecha]</td>
             <td>$i[hora]</td>
-            <td>$i[descripcion]</td>
+            <td>$descripcion</td>
             <td>$i[nombre]</td>
             <td><a href='eliminar.php?borrar=$i[idEventos] ' <i class='fa-solid fa-trash' style='color: #ff2b05;'></i></a></td> 
             </tr>";
