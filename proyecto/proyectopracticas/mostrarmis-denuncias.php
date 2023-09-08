@@ -4,7 +4,7 @@ include("conex.php");
 // $consulta = "SELECT E.* FROM USUARIOS U, eventos E WHERE e.idUsuario = u.idUsuario and '$_SESSION[id]' = u.idUsuario";
 $consulta = "SELECT DATE_FORMAT(e.fecha, '%d-%m-%Y') as fecha, 
              DATE_FORMAT(e.hora, '%h:%m') as hora, e.descripcion,e.idEventos,
-             a.descripcion as dAccidente, e.latitud, e.longitud
+             a.descripcion as dAccidente, e.latitud, e.longitud, foto
              FROM usuarios u, eventos e, accidentes a 
              WHERE e.idUsuario = u.idUsuario
              and e.idAccidente = a.idAccidente
@@ -19,7 +19,7 @@ foreach($resultado as $i) {
     <div class="card" style="margin-top: 20px; border: solid 1px black;">
         <div class="card-body">
             <div id="contenedor-denuncia">
-                 <img src="IMAGENES/Call.png" alt="" style="width: 150px; height:150px;"> 
+            <img src="<?php echo $i['foto'] ?>" alt="No se puede ver la foto" style="width: 150px; height:150px; border-radius: 100%">  
                 
                 <div id="texto-denuncia">
                     <?php

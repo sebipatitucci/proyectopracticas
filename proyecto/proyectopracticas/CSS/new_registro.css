@@ -8,7 +8,7 @@
     display: flex;
     width: 70%;
     margin: 50px auto;
-    height: 700px;
+    height: 800px;
     box-shadow: 3px 3px 20px 3px black;
     border: solid 1px black;
 }
@@ -61,6 +61,7 @@
     font-size: 40px;
     font-family: 'REM', sans-serif;
     color: white;
+    text-shadow: 3px 3px 30px black;
 }
 
 .form-floating{
@@ -72,6 +73,10 @@
     box-shadow: 3px 3px 20px 3px rgb(3, 59, 73);
     border: solid 1px rgb(0, 0, 0);
     border-radius: 5px;
+}
+
+#foto{
+    background-color: black;
 }
 
 #btn-registro{
