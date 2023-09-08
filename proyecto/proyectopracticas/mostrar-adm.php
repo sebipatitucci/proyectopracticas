@@ -38,7 +38,7 @@ $resultado = mysqli_query($conex, $consulta);
             <td>$i[hora]</td>
             <td>$descripcion</td>
             <td>$i[nombre]</td>
-            <td><a href='eliminar.php?borrar=$i[idEventos] ' <i class='fa-solid fa-trash' style='color: #ff2b05;'></i></a></td> 
+            <td><a href='aEliminar.php?aBorrar=$i[idEventos] ' <i class='fa-solid fa-trash' style='color: #ff2b05;'></i></a></td> 
             </tr>";
             
         }

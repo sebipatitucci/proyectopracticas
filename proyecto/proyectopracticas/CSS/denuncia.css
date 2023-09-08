@@ -80,6 +80,19 @@ form{
     box-shadow: 5px 5px 10px 2px rgb(0, 0, 0);
 }
 
+#divlatitud{
+    position: absolute;
+    right: 400px;
+    bottom: 40px;
+    width: 180px;
+}
+
+#divlongitud{
+    position: absolute;
+    right: 200px;
+    bottom: 40px;
+    width: 180px;
+}
 
 .ok{
     margin-top: 20px;
