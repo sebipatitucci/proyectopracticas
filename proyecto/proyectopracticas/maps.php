@@ -12,8 +12,8 @@
       margin-left: auto;
       border: solid 1px black;
       margin-top: 50px;
-      margin-bottom: 50px;
-      box-shadow: 5px 5px 5px 2px #abadb1;;
+      margin-bottom: 80px;
+      box-shadow: 5px 5px 5px 2px #abadb1;
     }
   </style>
 </head>
@@ -23,7 +23,7 @@
 
   $query = "SELECT estado, uEstado, latitud, longitud, descripcion, u.nombre as nombre, DATE_FORMAT(fecha, '%d-%m-%Y') as fecha from eventos e, usuarios u
             where e.idUsuario = u.idUsuario and estado = 1 and uEstado = 1 and idPerfil = 2";
-//                            
+                            
   $resultadoMapa = mysqli_query($conex, $query);
 
   ?>
