@@ -2,7 +2,7 @@
 include("conex.php");
 
 $consulta = "SELECT DATE_FORMAT(e.fecha, '%d-%m-%Y') as fecha,
-                    DATE_FORMAT(e.hora, '%h:%m') as hora, 
+                    DATE_FORMAT(e.hora, '%h:%i') as hora, 
                     e.descripcion,e.idEventos, 
                     a.descripcion as dAccidente,
                     e.latitud, e.longitud, u.nombre, uEstado
@@ -11,7 +11,8 @@ $consulta = "SELECT DATE_FORMAT(e.fecha, '%d-%m-%Y') as fecha,
                     and uEstado = 1
                     AND u.idPerfil = 2
                     AND e.idUsuario = u.idUsuario
-                    AND e.idAccidente = a.idAccidente";
+                    AND e.idAccidente = a.idAccidente
+                    order by fecha desc";
 $resultado = mysqli_query($conex, $consulta);
 
 

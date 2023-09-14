@@ -101,11 +101,24 @@
         </div>
 
 
-        <h2 id="latest-news">Últimas denuncias</h2>
-        <?php include("maps.php"); ?>
+        <h2 class="latest-news">Localidades donde mas denuncias se realizaron</h2>
+        <?php include_once("maps.php"); ?>
         <div class="container">
-            <?php include("mostrar.php") ?>
-
+            <div class="row">
+                <h2 class="latest-news">Últimas denuncias</h2>
+        <?php 
+        include("cardIndex.php");
+        ?>
+                
+            </div>
+        </div>
+        <h2 class="latest-news">Estadísticas</h2>
+        <div class="container">
+        <?php 
+        include_once("graficoAnillo.php"); 
+        include_once("graficoBarra.php"); 
+        ?>    
+            
         </div>
     </section>
 

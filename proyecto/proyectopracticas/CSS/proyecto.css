@@ -187,6 +187,8 @@ section{
 .latest-news{
     margin-top: 100px;
     text-align: center;
+    font-family: 'REM', sans-serif;
+    font-weight: bolder;
 }
 
 .col-4{

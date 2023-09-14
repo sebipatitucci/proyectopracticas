@@ -76,7 +76,7 @@ $resultado=mysqli_query($conex, $query);
 
         </div>
         <div class="right-container">
-            <h3>Realiza tu denuncia!</h3>
+            <h3>Modifica tu denuncia!</h3>
             <form id="combo" name="combo" method="POST" action="modificar.php">
 
                 <div class="form-floating ">
@@ -113,25 +113,25 @@ $resultado=mysqli_query($conex, $query);
                
 
                 <div class="form-floating" id="divlatitud">
-                    <input type="text" class="form-control" id="latitud" placeholder="Latitud" name="latitud" class="inputs" readonly value="<?php echo $fila['latitud'];?>">
+                    <input type="text" class="form-control" id="latitud" placeholder="Latitud" name="latitud" class="inputs" readonly value="">
                     <label for="floatingLatitud">Latitud</label>
                 </div>
 
                 <div class="form-floating" id="divlongitud">
-                    <input type="text" class="form-control" id="longitud" placeholder="longitud" name="longitud" class="inputs" readonly value="<?php echo $fila['longitud'];?>">
+                    <input type="text" class="form-control" id="longitud" placeholder="longitud" name="longitud" class="inputs" readonly value="">
                     <label for="floatingLongitud">Longitud</label>
                 </div>
 
                 <div class="form-floating">
-                    <input type="date" class="form-control" id="floatingFecha" placeholder="fecha" name="fecha" required class="inputs" value="<?php echo $fila['fecha'];?>">
+                    <input type="date" class="form-control" id="floatingFecha" placeholder="fecha" name="fecha" required class="inputs" value="">
                     <label for="floatingFecha">Fecha</label>
                 </div>
                 <div class="form-floating">
-                    <input type="time" class="form-control" id="floatingHora" placeholder="horario" name="hora" required class="inputs" value="<?php echo $fila['hora'];?>">
+                    <input type="time" class="form-control" id="floatingHora" placeholder="horario" name="hora" required class="inputs" value="">
                     <label for="floatingHora">Horario</label>
                 </div>
                 <div class="form-floating">
-                    <input type="text" class="form-control" id="floatingDescripcion" placeholder="descripcion" name="descripcionEvento" required class="inputs" value="<?php echo $fila['descripcion'];?>">
+                    <input type="text" class="form-control" id="floatingDescripcion" placeholder="descripcion" name="descripcionEvento" required class="inputs" value="">
                     <label for="floatingDescripcion">Descripcion del evento</label>
                 </div>
                 <input type="hidden" value="<?php echo $id;?>" name="idDenuncia">
@@ -144,7 +144,7 @@ $resultado=mysqli_query($conex, $query);
 
     <?php
  
-    if ('POST' == $_SERVER['REQUEST_METHOD']) {
+    
         if (
             isset($_POST['opciones']) && isset($_POST['latitud']) &&
             isset($_POST['longitud']) && isset($_POST['fecha']) && isset($_POST['hora']) &&
@@ -177,7 +177,7 @@ $resultado=mysqli_query($conex, $query);
 
             $conex->close();
         }
-    }
+    
 
 
     ?>
