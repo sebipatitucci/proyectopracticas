@@ -115,11 +115,19 @@
         <h2 class="latest-news">Estadísticas</h2>
         <div class="container">
         <?php 
-        include_once("graficoAnillo.php"); 
-        include_once("graficoBarra.php"); 
-        ?>    
-            
+        include_once("graficoLinea.php"); 
+           
+        ?>
         </div>
+        <h6 class="latest-news">Cantidad de denuncias por país</h6><br>
+        <div class="container">
+            <?php
+        include_once("graficoLinea.php"); 
+        include_once("graficoGeografico.php");    
+       
+        ?>
+        </div>
+        
     </section>
 
     <footer>

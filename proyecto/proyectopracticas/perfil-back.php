@@ -17,15 +17,18 @@
             echo "<li class='right-list-element'>$row[telefono]</li>";
             echo "<li class='right-list-element'>$row[fecha_nac]</li>";
         echo"</ul>";
-            
         
+       
     }
 
-
-$conex->close();
+    $conex->close();
 
 ?>
 <div class="card-body">
-    <a href="modificarUsuario.php?id=<?php echo $_SESSION['id']; ?>"  class="btn btn-primary">Modificar datos</a>
+    <a href="modificarUsuario.php?id=<?php echo $_SESSION['id']; ?>"  class="btn btn-primary"  
+    style="
+    position: relative;
+    left: 140px;
+    top: 45px;
+    ">Modificar datos</a>
 </div>
- 

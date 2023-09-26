@@ -8,19 +8,19 @@ require_once("conex.php");
 <head>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-       google.charts.load('current', {packages: ['corechart', 'bar']});
-google.charts.setOnLoadCallback(drawBasic);
+        google.charts.load('current', {packages: ['corechart', 'bar']});
+google.charts.setOnLoadCallback(drawBasicY);
 
-function drawBasic() {
+function drawBasicY() {
 
-      var data = google.visualization.arrayToDataTable([
+      var data2 = google.visualization.arrayToDataTable([
         ['Robos', 'Cantidad de robos',],
         <?php
-                $sql = "SELECT a.descripcion as descripcion, COUNT(e.idAccidente) as cantidad FROM eventos e, accidentes a WHERE e.idAccidente = a.idAccidente and estado = 1 GROUP BY e.idAccidente order by cantidad desc";
+                $sql = "SELECT nombre, COUNT(nombre) as cantidad FROM usuarios u, eventos e WHERE u.idUsuario = e.idUsuario AND e.estado = 1 and idPerfil = 2 and uEstado = 1 GROUP BY nombre order by cantidad desc limit 7";
                 $resultado = mysqli_query($conex, $sql);
                 
                 foreach($resultado as $i){
-                    echo "['" .$i['descripcion']."', ".$i['cantidad']."],";
+                    echo "['" .$i['nombre']."', ".$i['cantidad']."],";
                 }
                 ?>
       ]);
@@ -37,15 +37,15 @@ function drawBasic() {
         }
       };
 
-      var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+      var chart = new google.visualization.BarChart(document.getElementById('chart_div2'));
 
-      chart.draw(data, options);
+      chart.draw(data2, options);
     }
     </script>
 </head>
 
 <body>
-    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+    <div id="chart_div2" style="width: 700px; height: 400px;"></div>
 </body>
 
 </html>

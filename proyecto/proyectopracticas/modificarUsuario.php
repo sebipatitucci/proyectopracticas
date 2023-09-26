@@ -49,23 +49,23 @@
             <form action="modificarUsuario.php" method="POST">
                 <h3>Modificar</h3>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingInput" placeholder="Ingrese su nombre" name="nombre" required value="<?php echo $fila['nombre'];?>">
+                    <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre" name="nombre" required value="<?php echo $fila['nombre'];?>">
                     <label for="floatingInput">Nombre y Apellido</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="floatingInput" placeholder="Ingrese su correo electrónico" name="correo" required value="<?php echo $fila['email'];?>">
+                    <input type="email" class="form-control" id="email" placeholder="Ingrese su correo electrónico" name="correo" required value="<?php echo $fila['email'];?>">
                     <label for="floatingInput">Correo electrónico</label>
                 </div>
                 <div class="form-floating">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Ingrese su contraseña" name="contraseña" required value="<?php echo $fila['contrasenia'];?>">
+                    <input type="password" class="form-control" id="contraseña" placeholder="Ingrese su contraseña" name="contraseña" required value="<?php echo $fila['contrasenia'];?>">
                     <label for="floatingPassword">Contraseña</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingInput" pattern="[0-9]{2}-[0-9]{4}-[0-9]{4}" title="XX-XXXX-XXXX" placeholder="XX-XXXX-XXXX" name="telefono" required value="<?php echo $fila['telefono'];?>">
+                    <input type="text" class="form-control" id="telefono" pattern="[0-9]{2}-[0-9]{4}-[0-9]{4}" title="XX-XXXX-XXXX" placeholder="XX-XXXX-XXXX" name="telefono" required value="<?php echo $fila['telefono'];?>">
                     <label for="floatingInput">Teléfono</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="date" class="form-control" id="floatingInput" placeholder="Ingrese su correo electrónico" name="date" required value="<?php echo $fila['fecha_nac'];?>">
+                    <input type="date" class="form-control" id="fechanac" placeholder="Ingrese su correo electrónico" name="date" required value="<?php echo $fila['fecha_nac'];?>">
                     <label for="floatingInput">Fecha de nacimiento</label>
                 </div>
                 <input type="hidden" value="<?php echo $id; ?>" name="idUsuario">
@@ -106,7 +106,24 @@
                     showConfirmButton: false,
                     footer: '<a href=perfil.php>Volver al perfil</a>'
                   });
-                    </script>";   
+                    </script>";  
+                    
+                    echo "<script>
+            
+            var nombre = document.getElementById('nombre');
+            var email = document.getElementById('email');
+            var con = document.getElementById('contraseña');
+            var telefono = document.getElementById('telefono');
+            var fechanac = document.getElementById('fechanac');
+            
+            
+            nombre.value = '';
+            email.value = '';
+            con.value = '';
+            telefono.value = '';
+            fechanac.value = '';
+            
+            </script>";
             } else {
                 echo "<div class='bad animate__animated animate__fadeInLeft'>¡HUBO UN ERROR!</div>";
                 

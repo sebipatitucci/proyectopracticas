@@ -3,19 +3,18 @@
 require_once("conex.php");
 
 ?>
-<html>
+  <html>
   <head>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-      google.charts.load("current", {packages:["corechart"]});
+      google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
+
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['Task', 'Hours per Day'],
+          ['Accidente', 'Cantidad'],
           <?php
-                $sql = " SELECT l.descripcion as descripcion,count(l.Descripcion) as cantidad FROM eventos e, localidades l 
-                WHERE e.idLocalidad = l.idLocalidad and estado = 1 GROUP BY l.Descripcion ORDER BY cantidad desc LIMIT 10 ";
-
+                $sql = "SELECT a.descripcion as descripcion, COUNT(e.idAccidente) as cantidad FROM eventos e, accidentes a WHERE e.idAccidente = a.idAccidente and estado = 1 GROUP BY e.idAccidente";
                 $resultado = mysqli_query($conex, $sql);
                 
                 foreach($resultado as $i){
@@ -25,17 +24,19 @@ require_once("conex.php");
         ]);
 
         var options = {
-          title: 'Localidades con mas denuncias',
-          pieHole: 0.4,
-          
+          title: 'Cantidad de denuncias por tipo de accidente',
+          curveType: 'function',
+          legend: { position: 'bottom' }
         };
 
-        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
         chart.draw(data, options);
       }
     </script>
   </head>
   <body>
-    <div id="donutchart" style="width: 900px; height: 500px;"></div>
+    <div id="curve_chart" style="width: 100%; height: 500px; margin-bottom: 50px;"></div>
   </body>
 </html>
+
