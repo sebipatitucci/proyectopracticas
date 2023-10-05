@@ -16,6 +16,23 @@ if ($_SESSION['perfil'] = 1) {
     } else {
         echo "No se pudo borrar";
     }
+
+    
+        if ($_GET['activar']) {
+            $id = $_GET['activar'];
+    
+            $consulta = "UPDATE eventos 
+            SET estado = 1 
+            where estado = 0
+            and idEventos = '$id'";
+            $resultado = mysqli_query($conex, $consulta);
+    
+            if($resultado){
+                header("location: dncAdministrador.php");
+            }else{
+                echo "No se pudo activar";
+            }
+        }
 } 
 /* $consulta = "DELETE FROM eventos where idEventos = '$id'";
 $consulta = "UPDATE eventos 

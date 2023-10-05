@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link href="https://fonts.googleapis.com/css2?family=REM&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/eb576a252a.js" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </head>
 
 <body>
@@ -28,8 +29,8 @@
                 <p>Personas lastimadas?</p>
                 <p>Incendios?</p>
                 <p>Cualquiera sea la emergencia, no dudes en realizar la denuncia.</p>
-                <a href="registrofinal.php"><input type="submit" value="Registrarme" id="reg"></a>
-                <a href="loginfinal.php"><input type="button" value="Iniciar sesión" id="ini"></a>
+                <a><input type="submit" value="Registrarme" id="reg"></a>
+                <a><input type="button" value="Iniciar sesión" id="ini"></a>
             </div>
             <div id="main-image-container">
                 <img src="IMAGENES/cars.jpg" alt="" id="img-main">
@@ -40,34 +41,84 @@
     <?php
     if (!isset($_SESSION['id']) && !isset($_SESSION['name'])) {
         echo "<script type='text/javascript'>
-                var idDenuncia = document.getElementById('btnDenuncia');
-                var btnConfig = document.getElementById('configuracion');
-                var btnSesion = document.getElementById('btnSesion');
+        var idDenuncia = document.getElementById('btnDenuncia');
+        var btnConfig = document.getElementById('configuracion');
+        var btnSesion = document.getElementById('btnSesion');
+        var btnRegistro = document.getElementById('reg');
+        var btnInicio = document.getElementById('ini');
+
+        btnInicio.onclick = function(){
+            window.location.href = 'loginfinal.php';
+        }
+
+        btnRegistro.onclick = function(){
+            window.location.href = 'registrofinal.php';
+        }
+
+        idDenuncia.onclick = function(){
+            
+            Swal.fire({
+                icon: 'warning',
+                title: 'Error',
+                text: 'Debe iniciar sesión para poder denunciar!',
                 
+              })
+              
+        }
+        btnConfig.onclick = function(){
+            Swal.fire({
+                icon: 'warning',
+                title: 'Error',
+                text: 'Debe iniciar sesión para acceder a las configuraciones!',
+                
+              })
+        }
+        btnSesion.onclick = function(){
+            Swal.fire({
+                icon: 'warning',
+                title: 'Error',
+                text: 'No ha iniciado sesión!',
+                
+              })
+            
+        }
 
-                idDenuncia.onclick = function(){
-                    alert('Debe iniciar sesion para poder denunciar');
-                }
-                btnConfig.onclick = function(){
-                    alert('Debe iniciar sesion para acceder a las configuraciones');
-                }
-                btnSesion.onclick = function(){
-                    alert('No ha iniciado sesion');
-                    
-                }
+        </script>";
+} else {
+echo "<script type='text/javascript'>
+        var btnRegistro = document.getElementById('reg');
+        var btnInicio = document.getElementById('ini');
+        var idDenuncia = document.getElementById('btnDenuncia');
+        var btnConfig = document.getElementById('configuracion');
+        var btnSesion = document.getElementById('btnSesion');
 
-                </script>";
-    } else {
-        echo "<script type='text/javascript'>
-                var btnRegistro = document.getElementById('reg');
-                var btnInicio = document.getElementById('ini');
+        btnInicio.onclick = function(){
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Ya tiene una sesión iniciada!',
+                
+              })
+        }
+        btnRegistro.onclick = function(){
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Debe cerrar sesión para poder registrar otro usuario!',
+                
+              });
+        }
+        idDenuncia.onclick = function(){
+            window.location.href = 'denuncia.php';
+        }
+        btnConfig.onclick = function(){
+            window.location.href = 'mis-denuncias.php';
+        }
+        btnSesion.onclick = function(){
+           
+            location.href = 'logout.php';
+        }
 
-                btnInicio.onclick = function(){
-                    alert('Ya inicio sesion, no puede volver a hacerlo');
-                }
-                btnRegistro.onclick = function(){
-                    alert('Debe cerrar sesion para poder registrar otro usuario');
-                }
 
                 </script>";
     }

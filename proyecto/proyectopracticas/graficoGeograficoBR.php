@@ -10,9 +10,9 @@ require_once("conex.php");
       google.charts.load('current', {
         'packages':['geochart'],
       });
-      google.charts.setOnLoadCallback(drawRegionsMap);
+      google.charts.setOnLoadCallback(drawRegionsMap2);
 
-      function drawRegionsMap() {
+      function drawRegionsMap2() {
         var data = google.visualization.arrayToDataTable([
           ['Localidad', 'Denuncias'],
           
@@ -33,7 +33,7 @@ require_once("conex.php");
         ]);
 
         var options = {
-        region: 'AR',
+        region: 'BR',
         resolution: 'provinces',
          colorAxis: {colors: ['green','cyan', 'blue']},
           backgroundColor: '#ffffff',
@@ -41,14 +41,13 @@ require_once("conex.php");
           defaultColor: '#ffffff',
         };
 
-        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div2'));
 
         chart.draw(data, options);
-        
       }
     </script>
   </head>
   <body>
-    <div id="regions_div" style="width: 100%; height: 500px;"></div>
+    <div id="regions_div2" style="width: 100%; height: 500px;"></div>
   </body>
 </html>

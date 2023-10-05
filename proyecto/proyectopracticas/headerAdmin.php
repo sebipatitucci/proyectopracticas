@@ -17,16 +17,16 @@
               <a class="nav-link" href="indexAdmin.php#about-us">Nosotros</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="denuncia.php" id="btnDenuncia">Denuncia</a>
+              <a class="nav-link" id="btnDenuncia">Denuncia</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="color4" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="fa-regular fa-user"></i>
                 </a>
                 <ul class="dropdown-menu" style="border: solid 3px black;">
-                    <li><a class="dropdown-item " href="dncAdministrador.php" id="configuracion">Configuración</a></li>
+                    <li><a class="dropdown-item " id="configuracion">Configuración</a></li>
                     <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item " href="logout.php" id="btnSesion">Cerrar sesión</a></li>
+                    <li><a class="dropdown-item " id="btnSesion">Cerrar sesión</a></li>
                 </ul>
             </li>
           </ul>

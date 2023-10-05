@@ -42,7 +42,9 @@
                      
                     $consulta = "SELECT *FROM usuarios WHERE idPerfil = 2 AND uEstado = 1";
                     $resultado = mysqli_query($conex, $consulta);
-                    //$_SESSION['sessionUser'] = $i['idPerfil'];
+                    #consulta para usuarios desactivados
+                    $query = "SELECT *FROM usuarios WHERE idPerfil = 2 AND uEstado = 0";
+                    $result = mysqli_query($conex, $query);
                    
                     
 
@@ -72,6 +74,45 @@
             
                         </tbody>
                       </table>
+                      <div class="accordion accordion-flush" id="accordionFlushExample">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                              Usuarios desactivados 
+                            </button>
+                          </h2>
+                          <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                              <div class="accordion-body">
+
+                                    <table class="table table-hover">
+                                        <thead>
+                                          <tr>
+                                            <th scope="col">Id</th>
+                                            <th scope="col">Nombre</th>
+                                            <th scope="col">Email</th>
+                                            <th scope="col">Telefono</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr>
+                                            <?php 
+                                            foreach($result as $j){
+                                            echo "<th scope='row'>$j[idUsuario]</th>
+                                            <td>$j[nombre]</td>
+                                            <td>$j[email]</td>
+                                            <td>$j[telefono]</td>
+                                            <td><a href='eliminarUsuario.php?activar=$j[idUsuario] ' <i class='fa-solid fa-house-medical-circle-check' style='color: #19e67c;'></i></a></td> 
+                                            </tr>";
+                                            
+                                        }
+                                        ?>
+                            
+                                        </tbody>
+                                    </table>
+                          
+                          </div>
+                        </div>
+                    </div>  
                         <?php
                         
                     
