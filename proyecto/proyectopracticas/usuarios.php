@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Configuración Administrador</title>
     <link rel="stylesheet" href="CSS/mis-denuncias copy.css">
+    <link rel="stylesheet" href="CSS/search.css">
     <script src="https://kit.fontawesome.com/eb576a252a.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 </head>
@@ -13,6 +14,7 @@
 <?php 
     session_start();
     include("headerAdmin.php");
+    include("buscador.php");
 
     if ($_SESSION['perfil'] == 1) {
         
@@ -35,8 +37,20 @@
             <!-- <div class="content-right-col">
                 
             </div> -->
+            
+
+
             <div class="main-right-col">   
                 <h3>Usuarios registrados</h3>
+              
+                <div class="container">
+                    <input type="text" name="text" class="input input light-table-filter" placeholder="Nombre del usuario" data-table="table_id">
+                    <div class="btn">
+                      <i class="icono fa fa-search "></i>
+                    </div>
+                </div>
+
+
                 <?php 
                     include("conex.php");
                      
@@ -49,7 +63,7 @@
                     
 
                         ?>
-                        <table class="table table-hover">
+                        <table class="table table-hover table_id">
                         <thead>
                           <tr>
                             <th scope="col">Id</th>
@@ -66,12 +80,14 @@
                             <td>$i[nombre]</td>
                             <td>$i[email]</td>
                             <td>$i[telefono]</td>
-                            <td><a href='eliminarUsuario.php?borrar=$i[idUsuario] ' <i class='fa-solid fa-trash' style='color: #ff2b05;'></i></a></td> 
+                            <td><a href='eliminarUsuario.php?borrar=$i[idUsuario] ' name='delete' <i class='fa-solid fa-trash' style='color: #ff2b05;'></i></a></td> 
                             </tr>";
                             
                         }
+                       
                         ?>
-            
+
+
                         </tbody>
                       </table>
                       <div class="accordion accordion-flush" id="accordionFlushExample">
@@ -84,7 +100,7 @@
                           <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                               <div class="accordion-body">
 
-                                    <table class="table table-hover">
+                                    <table class="table table-hover table_id">
                                         <thead>
                                           <tr>
                                             <th scope="col">Id</th>
@@ -160,6 +176,7 @@
             </div>
         </div>
     </footer>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
 </html>

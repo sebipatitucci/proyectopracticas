@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Configuración Administrador</title>
     <link rel="stylesheet" href="CSS/mis-denuncias copy.css">
+    <link rel="stylesheet" href="CSS/search.css">
     <script src="https://kit.fontawesome.com/eb576a252a.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 </head>
@@ -13,6 +14,8 @@
 <?php 
     session_start();
     include("headerAdmin.php");
+    include("buscador.php");
+    
     if ($_SESSION['perfil'] == 1) {
         
     }else{
@@ -37,6 +40,12 @@
             </div> -->
             <div class="main-right-col">   
                 <h3>Denuncias de los usuarios</h3>
+                <div class="container">
+                    <input type="text" name="text" class="input input light-table-filter" placeholder="Buscar denuncia" data-table="table_id">
+                    <div class="btn">
+                        <i class="icono fa fa-search"></i>
+                    </div>
+                </div>
                 <?php include("mostrar-adm.php"); ?>
             </div>
             
