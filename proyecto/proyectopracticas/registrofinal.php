@@ -22,6 +22,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['name'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/eb576a252a.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=REM&display=swap" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </head>
 
 <body style="background-color: rgb(243, 222, 208);">
@@ -90,6 +91,24 @@ if (isset($_SESSION['id']) && isset($_SESSION['name'])) {
             $directorio_destino = "IMAGENES";
             $img_file = $foto['name'];
             $img_type = $foto['type'];
+
+            $validarPass = mysqli_query($conex, "SELECT contrasenia FROM usuarios WHERE contrasenia = '$contrasenia' ");
+            if (mysqli_num_rows($validarPass) > 0) {
+                echo"<script>
+                        Swal.fire('¡ERROR!','La contraseña ingresada ya existe','error');
+                    </script>";
+                exit();
+            }
+            
+            $validarCorreo = mysqli_query($conex, "SELECT email FROM usuarios WHERE email = '$email' ");
+            if (mysqli_num_rows($validarCorreo) > 0) {
+                echo"<script>
+                        Swal.fire('¡ERROR!','El email ingresado ya existe','error');
+                    </script>";
+                exit();
+            }
+
+
             if (strpos($img_type, "gif") || strpos($img_type, "jpeg") || strpos($img_type, "jpg") || strpos($img_type, "png")) {
                 $destino = $directorio_destino . '/' . $img_file;
                 $consulta = "INSERT INTO usuarios (nombre, email, contrasenia, telefono, fecha_nac, idPerfil, foto) 
@@ -98,9 +117,13 @@ if (isset($_SESSION['id']) && isset($_SESSION['name'])) {
 
                 if(move_uploaded_file($tmp_name, $destino)){
                     if ($resultado) {
-                        echo "<div class='ok animate__animated animate__fadeInLeft'>¡HAZ SIDO REGISTRADO!</div>";
+                        echo"<script>
+                                Swal.fire('¡Bien hecho!','Fuiste registrado correctamente','success');
+                            </script>";
                     } else {
-                        echo "<div class='bad animate__animated animate__fadeInLeft'>¡HUBO UN ERROR!</div>";
+                        echo"<script>
+                                Swal.fire('¡ERROR!','No se ha podido registrar','error');
+                            </script>";
                     }
                 }
                 
@@ -109,7 +132,9 @@ if (isset($_SESSION['id']) && isset($_SESSION['name'])) {
 
             $conex->close();
         } else {
-            echo "<div class='bad animate__animated animate__fadeInLeft'>¡HUBO UN ERROR!</div>";
+            echo"<script>
+                    Swal.fire('¡ERROR!','Algo salio mal','error');
+                </script>";
         }
     }
 
