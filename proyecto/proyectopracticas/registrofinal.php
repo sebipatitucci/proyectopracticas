@@ -108,7 +108,6 @@ if (isset($_SESSION['id']) && isset($_SESSION['name'])) {
                 exit();
             }
 
-
             if (strpos($img_type, "gif") || strpos($img_type, "jpeg") || strpos($img_type, "jpg") || strpos($img_type, "png")) {
                 $destino = $directorio_destino . '/' . $img_file;
                 $consulta = "INSERT INTO usuarios (nombre, email, contrasenia, telefono, fecha_nac, idPerfil, foto) 
@@ -117,13 +116,13 @@ if (isset($_SESSION['id']) && isset($_SESSION['name'])) {
 
                 if(move_uploaded_file($tmp_name, $destino)){
                     if ($resultado) {
-                        echo"<script>
+                           echo"<script>
                                 Swal.fire('¡Bien hecho!','Fuiste registrado correctamente','success');
                             </script>";
                     } else {
                         echo"<script>
-                                Swal.fire('¡ERROR!','No se ha podido registrar','error');
-                            </script>";
+                        Swal.fire('¡Bien hecho!','Fuiste registrado correctamente','success');
+                    </script>";
                     }
                 }
                 
@@ -133,8 +132,8 @@ if (isset($_SESSION['id']) && isset($_SESSION['name'])) {
             $conex->close();
         } else {
             echo"<script>
-                    Swal.fire('¡ERROR!','Algo salio mal','error');
-                </script>";
+            Swal.fire('¡ERROR!','Algo salio mal','error');
+        </script>";
         }
     }
 

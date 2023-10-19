@@ -12,7 +12,12 @@ if ($_SESSION['perfil'] = 2) {
     $resultado = mysqli_query($conex, $consulta);
 
     if ($resultado) {
-        header("location: mis-denuncias.php");
+        ?>
+        <script>
+            window.location.href = "mis-denuncias.php";
+        </script>
+        <?php
+        // header("location: mis-denuncias.php");
     } else {
         echo "No se pudo borrar";
     }

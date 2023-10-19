@@ -58,7 +58,7 @@
         idDenuncia.onclick = function(){
             
             Swal.fire({
-                icon: 'warning',
+                icon: 'error',
                 title: 'Error',
                 text: 'Debe iniciar sesión para poder denunciar!',
                 
@@ -67,7 +67,7 @@
         }
         btnConfig.onclick = function(){
             Swal.fire({
-                icon: 'warning',
+                icon: 'error',
                 title: 'Error',
                 text: 'Debe iniciar sesión para acceder a las configuraciones!',
                 
@@ -75,7 +75,7 @@
         }
         btnSesion.onclick = function(){
             Swal.fire({
-                icon: 'warning',
+                icon: 'error',
                 title: 'Error',
                 text: 'No ha iniciado sesión!',
                 

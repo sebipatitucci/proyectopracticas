@@ -26,13 +26,13 @@ $consulta = "SELECT DATE_FORMAT(e.fecha, '%d-%m-%Y') as fecha,
 $resultado = mysqli_query($conex, $consulta);
 
 
-foreach($resultado as $i) {
+foreach ($resultado as $i) {
 ?>
     <div class="card" style="margin-top: 20px; border: solid 1px black;">
         <div class="card-body">
             <div id="contenedor-denuncia">
-            <img src="<?php echo $i['foto'] ?>" alt="No se puede ver la foto" style="width: 150px; height:150px; border-radius: 100%">  
-                
+                <img src="<?php echo $i['foto'] ?>" alt="No se puede ver la foto" style="width: 150px; height:150px; border-radius: 100%">
+
                 <div id="texto-denuncia">
                     <?php
                     $descripcion = ucfirst($i['descripcion']);
@@ -45,13 +45,37 @@ foreach($resultado as $i) {
                     ?>
                 </div>
             </div>
-            <a href="eliminar.php?borrar=<?php echo $i['idEventos']; ?>" class="btn btn-primary" style="margin-left: 5px;">Eliminar</a>
+            <a class="btn btn-primary" style="margin-left: 5px;" onclick="return eliminar()">Eliminar</a>
             <a href="modificarDenuncia.php?var=<?php echo $i['idEventos']; ?>" class="btn btn-primary">Modificar</a>
             <a href="mapBase.php?map=<?php echo $i['idEventos']; ?>" class="btn btn-primary" style="float: right;">Ver en el mapa</a>
         </div>
     </div>
 
-
+    <script language="javascript" type="text/javascript">
+        function eliminar() {
+            if (Swal.fire({
+                    title: 'Esta seguro de eliminar esta denuncia?',
+                    text: "No podrá recuperarla!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Si, quiero borrarla',
+                    cancelButtonText: 'Cancelar',
+                    
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        Swal.fire(
+                            'Eliminada!',
+                            'Su denuncia ha sido eliminada',
+                            'success',
+                            location = 'eliminar.php?borrar=<?php echo $i['idEventos']; ?>'
+                        )
+                    }
+                })) {
+            }
+        }
+    </script>
 <?php
 
 

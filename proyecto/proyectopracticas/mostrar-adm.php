@@ -20,7 +20,7 @@ $resultado = mysqli_query($conex, $consulta);
 
 
 
-    <table class="table table-hover">
+    <table class="table table-hover table_id">
         <thead>
           <tr>
             <th scope="col">Nº</th>
@@ -81,7 +81,7 @@ $result = mysqli_query($conex, $query);
       <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
           <div class="accordion-body">
 
-          <table class="table table-hover">
+          <table class="table table-hover table_id">
           <thead>
             <tr>
               <th scope="col">Nº</th>
@@ -103,7 +103,7 @@ $result = mysqli_query($conex, $query);
               <td>$j[hora]</td>
               <td>$descripcion</td>
               <td>$j[nombre]</td>
-              <td><a href='eliminar.php?activar=$j[idEventos] ' <i class='fa-solid fa-house-medical-circle-check' style='color: #19e67c;'></i></a></td> 
+              <td><a href='aEliminar.php?activar=$j[idEventos] ' <i class='fa-solid fa-house-medical-circle-check' style='color: #19e67c;'></i></a></td> 
               </tr>";
               
           }

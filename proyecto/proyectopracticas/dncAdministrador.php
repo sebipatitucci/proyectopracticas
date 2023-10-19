@@ -40,12 +40,15 @@
             </div> -->
             <div class="main-right-col">   
                 <h3>Denuncias de los usuarios</h3>
+
                 <div class="container">
                     <input type="text" name="text" class="input input light-table-filter" placeholder="Buscar denuncia" data-table="table_id">
                     <div class="btn">
                         <i class="icono fa fa-search"></i>
                     </div>
                 </div>
+
+                
                 <?php include("mostrar-adm.php"); ?>
             </div>
             
