@@ -1,4 +1,7 @@
-
+<?php 
+    
+    session_start();
+    ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,13 +12,15 @@
     <title>Configuración</title>
     <link rel="stylesheet" href="./CSS/perfil.css">
     <script src="https://kit.fontawesome.com/eb576a252a.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="shortcut icon" href="IMAGENES/emergencia-logo.png" type="image/x-icon">
 </head>
 <body> 
 
 <?php 
     include("header.php");
-    session_start();
+    
     ?>
 
     <div class="row">
@@ -24,7 +29,7 @@
            
           <a href="mis-denuncias.php" class="nav-items"><i class="fa-solid fa-truck-medical"></i> Mis denuncias</a>
           <a href="perfil.php" class="nav-items"><i class="fa-solid fa-user"></i> Mi Perfil</a>                   
-          <a href="notificaciones.php" class="nav-items"><i class="fa-solid fa-bell"></i> Notificaciones</a>  
+          
            
         </div>
         <div class="col-9" id="right-col">
@@ -33,16 +38,16 @@
                 <h5>Datos de cuenta</h5>
                 <div class="content-right-col">
                     <ul class="list-type">
-                        <li class="list-element"><b>Nombre y apellido</b></li>
-                        <li class="list-element"><b>Correo Eléctronico</b></li>
-                        <li class="list-element"><b>Contraseña</b></li>
-                        <li class="list-element"><b>Teléfono</b></li>
-                        <li class="list-element"><b>Fecha de nacimiento</b></li>
+                        <li class="list-element"><span>Nombre y apellido</span></li>
+                        <li class="list-element"><span>Correo Eléctronico</span></li>
+                        <li class="list-element"><span>Contraseña</span></li>
+                        <li class="list-element"><span>Teléfono</span></li>
+                        <li class="list-element"><span>Fecha de nacimiento</span></li>
                     </ul>
                     <?php include("perfil-back.php")?>
-                
-
                 </div>
+                <a href="modificarUsuario.php?id=<?php echo $_SESSION['id']; ?>"class="btn btn-primary" 
+               >Modificar datos</a>
 
             </div>
         </div>

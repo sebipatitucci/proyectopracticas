@@ -23,6 +23,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['name'])) {
     <script src="https://kit.fontawesome.com/eb576a252a.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=REM&display=swap" rel="stylesheet">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <link rel="shortcut icon" href="IMAGENES/emergencia-logo.png" type="image/x-icon">
 </head>
 
 <body style="background-color: rgb(243, 222, 208);">
@@ -92,13 +93,13 @@ if (isset($_SESSION['id']) && isset($_SESSION['name'])) {
             $img_file = $foto['name'];
             $img_type = $foto['type'];
 
-            $validarPass = mysqli_query($conex, "SELECT contrasenia FROM usuarios WHERE contrasenia = '$contrasenia' ");
-            if (mysqli_num_rows($validarPass) > 0) {
-                echo"<script>
-                        Swal.fire('¡ERROR!','La contraseña ingresada ya existe','error');
-                    </script>";
-                exit();
-            }
+            // $validarPass = mysqli_query($conex, "SELECT contrasenia FROM usuarios WHERE contrasenia = '$contrasenia' ");
+            // if (mysqli_num_rows($validarPass) > 0) {
+            //     echo"<script>
+            //             Swal.fire('¡ERROR!','La contraseña ingresada ya existe','error');
+            //         </script>";
+            //     exit();
+            // }
             
             $validarCorreo = mysqli_query($conex, "SELECT email FROM usuarios WHERE email = '$email' ");
             if (mysqli_num_rows($validarCorreo) > 0) {

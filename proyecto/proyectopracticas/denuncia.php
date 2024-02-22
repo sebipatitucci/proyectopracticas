@@ -24,6 +24,7 @@ $resultado=mysqli_query($conex, $query);
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=REM&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="IMAGENES/emergencia-logo.png" type="image/x-icon">
 
     <script language="javascript">
 			$(document).ready(function(){
@@ -167,7 +168,7 @@ $resultado=mysqli_query($conex, $query);
 
     ?>
     <script>
-        function initMap() {
+        async function initMap() {
             var latitud = -34.6526;
             var longitud = -58.4159;
 
@@ -198,7 +199,8 @@ $resultado=mysqli_query($conex, $query);
         }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzkgT0RFUq4nueCZBxig7rpOjoQoPM1XY&callback=initMap"></script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzkgT0RFUq4nueCZBxig7rpOjoQoPM1XY&callback=initMap"></script> -->
+    <script loading="async" defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzkgT0RFUq4nueCZBxig7rpOjoQoPM1XY&libraries=visualization&callback=initMap"></script>
 </body>
 
 </html>

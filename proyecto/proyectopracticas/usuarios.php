@@ -1,3 +1,6 @@
+<?php 
+    session_start();
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +15,7 @@
 </head>
 <body>
 <?php 
-    session_start();
+   
     include("headerAdmin.php");
     include("buscador.php");
 
@@ -30,7 +33,7 @@
            
            <a href="dncAdministrador.php" class="nav-items"><i class="fa-solid fa-file-lines"></i> </i> Denuncias</a>
            <a href="usuarios.php" class="nav-items"><i class="fa-solid fa-user"></i> Usuarios</a>                   
-           <a href="#" class="nav-items"><i class="fa-solid fa-bell"></i> Notificaciones</a>   
+            
            
         </div>
         <div class="col-9" id="right-col">

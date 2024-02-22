@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 include("conex.php");
 
 $id = $_GET['aBorrar'];
@@ -12,7 +12,12 @@ if ($_SESSION['perfil'] = 1) {
     $resultado = mysqli_query($conex, $consulta);
 
     if ($resultado) {
-        header("location: dncAdministrador.php");
+        ?>
+        <script>
+            location = "dncAdministrador.php";
+
+        </script>
+        <?php
     } else {
         echo "No se pudo borrar";
     }

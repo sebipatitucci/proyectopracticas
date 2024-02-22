@@ -20,38 +20,45 @@ $resultado = mysqli_query($conex, $consulta);
 
 
 
-    <table class="table table-hover table_id">
-        <thead>
-          <tr>
-            <th scope="col">Nº</th>
-            <th scope="col">Tipo de accidente</th>
-            <th scope="col">Fecha</th>
-            <th scope="col">Hora</th>
-            <th scope="col">Comentario</th>
-            <th scope="col">Usuario</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <?php 
-            foreach($resultado as $i){
-            $descripcion = ucfirst($i['descripcion']);
-            echo "<th scope='row'>$i[idEventos]</th>
+<table class="table table-hover table_id">
+  <thead>
+    <tr>
+      <th scope="col">Nº</th>
+      <th scope="col">Tipo de accidente</th>
+      <th scope="col">Fecha</th>
+      <th scope="col">Hora</th>
+      <th scope="col">Comentario</th>
+      <th scope="col">Usuario</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <?php
+      foreach ($resultado as $i) {
+        $descripcion = ucfirst($i['descripcion']);
+        echo "<th scope='row'>$i[idEventos]</th>
             <td>$i[dAccidente]</td>
             <td>$i[fecha]</td>
             <td>$i[hora]</td>
             <td>$descripcion</td>
             <td>$i[nombre]</td>
-            <td><a href='aEliminar.php?aBorrar=$i[idEventos] ' <i class='fa-solid fa-trash' style='color: #ff2b05;'></i></a></td> 
+            <td><a href='aEliminar.php?aBorrar=$i[idEventos]' <i class='fa-solid fa-trash' style='color: #ff2b05;'></i></a></td> 
             </tr>";
-            
-        }
-        ?>
-        </tbody>
-    </table>
-
-
-  
+      }
+      ?>
+  </tbody>
+</table>
+<div id="cartel">
+  <p id="close" style="position: absolute;right: 10px; color: black; font-weight: bold">X</p>
+  <p style="position: relative; margin-top: 40px; color: black; font-weight: bold;">Denuncia eliminada!</p>
+</div>
+<script>
+  var close = document.getElementById('close');
+  var cartel = document.getElementById('cartel');
+  close.addEventListener('click', () => {
+    cartel.style.display = 'none';
+  })
+</script>
 <?php
 
 
@@ -71,17 +78,17 @@ $query = "SELECT DATE_FORMAT(e.fecha, '%d-%m-%Y') as fecha,
 $result = mysqli_query($conex, $query);
 
 ?>
-  <div class="accordion accordion-flush" id="accordionFlushExample">
-    <div class="accordion-item">
-      <h2 class="accordion-header">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-          Denuncias desactivadas 
-        </button>
-      </h2>
-      <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-          <div class="accordion-body">
+<div class="accordion accordion-flush" id="accordionFlushExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+        Denuncias desactivadas
+      </button>
+    </h2>
+    <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">
 
-          <table class="table table-hover table_id">
+        <table class="table table-hover table_id">
           <thead>
             <tr>
               <th scope="col">Nº</th>
@@ -94,10 +101,10 @@ $result = mysqli_query($conex, $query);
           </thead>
           <tbody>
             <tr>
-              <?php 
-              foreach($result as $j){
+              <?php
+              foreach ($result as $j) {
                 $descripcion = ucfirst($j['descripcion']);
-              echo "<th scope='row'>$j[idEventos]</th>
+                echo "<th scope='row'>$j[idEventos]</th>
               <td>$j[dAccidente]</td>
               <td>$j[fecha]</td>
               <td>$j[hora]</td>
@@ -105,17 +112,16 @@ $result = mysqli_query($conex, $query);
               <td>$j[nombre]</td>
               <td><a href='aEliminar.php?activar=$j[idEventos] ' <i class='fa-solid fa-house-medical-circle-check' style='color: #19e67c;'></i></a></td> 
               </tr>";
-              
-          }
-          ?>
+              }
+              ?>
           </tbody>
-          </table>
+        </table>
 
       </div>
     </div>
   </div>
-<?php
+  <?php
 
-$conex->close();
+  $conex->close();
 
-?>
+  ?>

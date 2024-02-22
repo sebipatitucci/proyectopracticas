@@ -15,6 +15,12 @@
       margin-bottom: 80px;
       box-shadow: 5px 5px 5px 2px #abadb1;
     }
+    @media (max-width: 768px) {
+      #map{
+        width: 60%;
+      }
+
+    }
   </style>
 </head>
 
@@ -31,7 +37,7 @@
 
   <script>
    
-    function initMap() {
+    async function initMap() {
       // Coordenadas del centro del mapa
       var mapOptions = {
           center: { lat: -34.61, lng: -58.38 }, // Coordenadas de Buenos Aires
@@ -39,7 +45,7 @@
           
         };
 
-        var map = new google.maps.Map(
+        var map = await new google.maps.Map(
           document.getElementById("map"),
           mapOptions
         );

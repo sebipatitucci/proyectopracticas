@@ -1,16 +1,6 @@
 <?php
 include("conex.php");
 
-// $consulta = "SELECT E.* FROM USUARIOS U, eventos E WHERE e.idUsuario = u.idUsuario and '$_SESSION[id]' = u.idUsuario";
-// $consulta = "SELECT DATE_FORMAT(e.fecha, '%d-%m-%Y') as fecha, 
-//              DATE_FORMAT(e.hora, '%h:%m') as hora, e.descripcion,e.idEventos,
-//              a.descripcion as dAccidente, e.latitud, e.longitud, foto
-//              FROM usuarios u, eventos e, accidentes a 
-//              WHERE e.idUsuario = u.idUsuario
-//              and e.idAccidente = a.idAccidente
-//              and '$_SESSION[id]' = u.idUsuario 
-//              and estado = 1
-//              order by fecha desc";
 $consulta = "SELECT DATE_FORMAT(e.fecha, '%d-%m-%Y') as fecha, 
              DATE_FORMAT(e.hora, '%h:%i') as hora, e.descripcion,e.idEventos,
              a.descripcion as dAccidente, e.latitud, e.longitud, foto, l.Descripcion as lDescripcion, p.descripcion as pDescripcion
@@ -25,9 +15,9 @@ $consulta = "SELECT DATE_FORMAT(e.fecha, '%d-%m-%Y') as fecha,
 
 $resultado = mysqli_query($conex, $consulta);
 
-
 foreach ($resultado as $i) {
 ?>
+
     <div class="card" style="margin-top: 20px; border: solid 1px black;">
         <div class="card-body">
             <div id="contenedor-denuncia">
@@ -69,6 +59,7 @@ foreach ($resultado as $i) {
                             'Eliminada!',
                             'Su denuncia ha sido eliminada',
                             'success',
+                            
                             location = 'eliminar.php?borrar=<?php echo $i['idEventos']; ?>'
                         )
                     }

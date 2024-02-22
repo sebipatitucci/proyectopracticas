@@ -14,6 +14,7 @@ session_start();
     <script src="https://kit.fontawesome.com/eb576a252a.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <link rel="shortcut icon" href="IMAGENES/emergencia-logo.png" type="image/x-icon">
 </head>
 
 <body>
@@ -29,7 +30,7 @@ session_start();
 
             <a href="mis-denuncias.php" class="nav-items"><i class="fa-solid fa-truck-medical"></i> Mis denuncias</a>
             <a href="perfil.php" class="nav-items"><i class="fa-solid fa-user"></i> Mi Perfil</a>
-            <a href="notificaciones.php" class="nav-items"><i class="fa-solid fa-bell"></i> Notificaciones</a>
+           
 
         </div>
         <div class="col-9" id="right-col">
@@ -39,7 +40,7 @@ session_start();
 
                 include("conex.php");
 
-                $consulta = "SELECT u.nombre FROM usuarios U, eventos E where u.nombre = '$_SESSION[name]' and '$_SESSION[id]' = u.idUsuario ";
+                $consulta = "SELECT u.nombre FROM usuarios u, eventos e where u.nombre = '$_SESSION[name]' and '$_SESSION[id]' = u.idUsuario ";
                 $resultado = mysqli_query($conex, $consulta);
                 $row = mysqli_fetch_array($resultado);
                 if ($row) {

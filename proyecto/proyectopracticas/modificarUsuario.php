@@ -24,10 +24,11 @@
     <script src="https://kit.fontawesome.com/eb576a252a.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="sweetalert2.all.min.js"></script>
+    <link rel="shortcut icon" href="IMAGENES/emergencia-logo.png" type="image/x-icon">
 </head>
-<body style="background-image: url(IMAGENES/person.jpg); background-blend-mode:soft-light; background-color: #222222">
-
+<body style="background-color: rgb(243, 222, 208);">
     <?php 
+    include("header.php");
     
         if(isset($_GET['id']) ){
             $id = $_GET['id'];
@@ -47,7 +48,7 @@
         </div>
         <div class="right-container">
             <form action="modificarUsuario.php" method="POST">
-                <h3>Modificar</h3>
+                <h3 style="padding-left: 170px;">Modifique sus datos</h3>
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre" name="nombre" required value="<?php echo $fila['nombre'];?>">
                     <label for="floatingInput">Nombre y Apellido</label>
@@ -70,6 +71,7 @@
                 </div>
                 <input type="hidden" value="<?php echo $id; ?>" name="idUsuario">
                 <input type="submit" value="MODIFICAR" id="btn-registro" name="modificar">
+                <a href="perfil.php" id="linkLogin" style="right: 110px;">Volver a perfil</a>
             </form>
             
         </div>
@@ -103,8 +105,8 @@
                     icon: 'success',
                     title: 'Bien hecho!',
                     text: 'Tus datos fueron modificados',
-                    showConfirmButton: false,
-                    footer: '<a href=perfil.php>Volver al perfil</a>'
+                    showConfirmButton: true,
+                    
                   });
                     </script>";  
                     

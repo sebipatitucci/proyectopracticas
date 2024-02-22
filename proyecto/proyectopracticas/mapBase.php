@@ -1,3 +1,6 @@
+<?php 
+  session_start();
+  ?>
 <!DOCTYPE html>
 <html>
 
@@ -20,21 +23,21 @@
 
 <body>
   <?php include("conex.php");
-  session_start();
+  
   $map = $_GET['map'];
 
 
   $query2 = "SELECT estado, uEstado, latitud, longitud, descripcion, u.nombre as nombre, DATE_FORMAT(fecha, '%d-%m-%Y') as fecha from eventos e, usuarios u
           where e.idUsuario = u.idUsuario and estado = 1 and uEstado = 1 and $map = idEventos and '$_SESSION[id]' = u.idUsuario ";
 
-  echo $query2;
+  
   $resultadoMapa2 = mysqli_query($conex, $query2);
 
   ?>
   <div id="mapBase"></div>
 
   <script>
-    function initMap() {
+    async function initMap() {
       // Marcadores para los puntos cardinales
       var markers = [
         <?php
@@ -82,7 +85,7 @@
     }
   </script>
 
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzkgT0RFUq4nueCZBxig7rpOjoQoPM1XY&callback=initMap"></script>
+<script loading="async" defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzkgT0RFUq4nueCZBxig7rpOjoQoPM1XY&libraries=visualization&callback=initMap"></script>
 </body>
 
 </html>

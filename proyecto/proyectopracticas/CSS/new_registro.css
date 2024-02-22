@@ -1,138 +1,147 @@
-*{
-    margin: 0;
-    padding: 0;
-   
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.main-container{
-    display: flex;
-    width: 70%;
-    margin: 50px auto;
-    height: 800px;
-    box-shadow: 3px 3px 20px 3px black;
-    border: solid 1px black;
+.main-container {
+  display: flex;
+  width: 70%;
+  margin: 50px auto;
+  height: 800px;
+  box-shadow: 3px 3px 20px 3px black;
+  border: solid 1px black;
 }
 
-.left-container{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: white;
-    width: 35%;
-    border-right: solid 1px black;
+.left-container {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: white;
+  width: 35%;
+  border-right: solid 1px black;
 }
 
-.left-container img{
-    width: 400px;
-    margin: auto -20px;
+.left-container img {
+  width: 400px;
+  margin: auto -20px;
 }
 
-.left-container input{
-    position: relative;
-    top: 73px;
-    width: 250px;
-    height: 50px;
-    left: 80px;
-    color: white;
-    background-color: rgb(3, 59, 73);
-    font-size: 20px;
-    border: solid 2px white;
-    border-radius: 5px;
-    transition: 1s;
-
+.left-container input {
+  position: relative;
+  top: 73px;
+  width: 250px;
+  height: 50px;
+  left: 80px;
+  color: white;
+  background-color: rgb(3, 59, 73);
+  font-size: 20px;
+  border: solid 2px white;
+  border-radius: 5px;
+  transition: 1s;
 }
 
-.left-container input:hover{
-    background-color: white;
-    color: rgb(3, 59, 73);
-    border: solid 2px rgb(3, 59, 73);
-    
+.left-container input:hover {
+  background-color: white;
+  color: rgb(3, 59, 73);
+  border: solid 2px rgb(3, 59, 73);
 }
 
-.right-container{
-    width: 65%;
-    background-color: rgb(21, 104, 124);
-    color: black;
-    border-left: solid 1px black;
+.right-container {
+  width: 65%;
+  background-color: rgb(21, 104, 124);
+  color: black;
+  border-left: solid 1px black;
 }
 
-.right-container h3{
-    padding-top: 30px;
-    padding-left: 120px;
-    margin-bottom: 40px;
-    font-size: 40px;
-    font-family: 'REM', sans-serif;
-    color: white;
-    text-shadow: 3px 3px 30px black;
+.right-container h3 {
+  padding-top: 30px;
+  padding-left: 120px;
+  margin-bottom: 40px;
+  font-size: 40px;
+  font-family: "REM", sans-serif;
+  color: white;
+  text-shadow: 3px 3px 30px black;
 }
 
-.form-floating{
-    background-color: rgb(3, 59, 73);
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 25px;
-    box-shadow: 3px 3px 20px 3px rgb(3, 59, 73);
-    border: solid 1px rgb(0, 0, 0);
-    border-radius: 5px;
+.form-floating {
+  background-color: rgb(3, 59, 73);
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+  box-shadow: 3px 3px 20px 3px rgb(3, 59, 73);
+  border: solid 1px rgb(0, 0, 0);
+  border-radius: 5px;
 }
 
-#foto{
-    background-color: black;
+#foto {
+  background-color: black;
 }
 
-#btn-registro{
-    position: relative;
-    top: 40px;
-    width: 60%;
-    left: 150px;
-    height: 50px;
-    color: rgb(3, 59, 73);
-    background-color: white;
-    font-size: 20px;
-    border: none;
-    border-radius: 15px;
-    transition: 1s;
-    box-shadow: 3px 3px 20px 5px rgb(3, 59, 73);
+#btn-registro {
+  position: relative;
+  top: 40px;
+  width: 60%;
+  left: 150px;
+  height: 50px;
+  color: rgb(3, 59, 73);
+  background-color: white;
+  font-size: 20px;
+  border: none;
+  border-radius: 15px;
+  transition: 1s;
+  box-shadow: 3px 3px 20px 5px rgb(3, 59, 73);
 }
 
-#btn-registro:hover{
-    color: rgb(44, 134, 185);
-    
+#btn-registro:hover {
+  color: rgb(44, 134, 185);
 }
 
-#linkLogin{
-    position: relative;
-    color: rgb(255, 255, 255);
-    top: 100px;
-    right: 170px;
-    text-decoration: none;
+#linkLogin {
+  position: relative;
+  color: rgb(255, 255, 255);
+  top: 100px;
+  right: 170px;
+  text-decoration: none;
 }
 
-#linkLogin:hover{
-    text-decoration: underline;
+#linkLogin:hover {
+  text-decoration: underline;
 }
 
-.ok{
-    margin-top: 20px;
-    display: block;
-    text-align: center;
-	width: 100%;
-	padding: 12px;
-	background-color: #1e6;
-	color: #fff;
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    
+.ok {
+  margin-top: 20px;
+  display: block;
+  text-align: center;
+  width: 100%;
+  padding: 12px;
+  background-color: #1e6;
+  color: #fff;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .bad {
-    margin-top: 20px;
-    display: block;
-	text-align: center;
-	width: 100%;
-	padding: 12px;
-	background-color: #a22;
-	color: #fff;
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
+  margin-top: 20px;
+  display: block;
+  text-align: center;
+  width: 100%;
+  padding: 12px;
+  background-color: #a22;
+  color: #fff;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
 }
-
+@media screen and (max-width: 1366px) {
+  .right-container h3 {
+    padding-left: 60px;
+  }
+  #btn-registro {
+    top: 40px;
+    left: 130px;
+  }
+  .left-container img {
+    margin: auto -35px;
+  }
+  #linkLogin {
+    right: 170px;
+  }
+}

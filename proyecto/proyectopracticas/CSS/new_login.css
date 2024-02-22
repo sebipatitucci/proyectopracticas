@@ -1,110 +1,120 @@
-*{
-    margin: 0;
-    padding: 0;
-   
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.main-container{
-    display: flex;
-    width: 70%;  
-    margin: 70px auto;   
-    height: 500px;
-    box-shadow: 3px 3px 20px 3px black;
-    border: solid 1px black;
+.main-container {
+  display: flex;
+  width: 70%;
+  margin: 70px auto;
+  height: 500px;
+  box-shadow: 3px 3px 20px 3px black;
+  border: solid 1px black;
 }
 
-.left-container{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: white;
-    width:35%;
-    border-right: solid 1px black;
+.left-container {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: white;
+  width: 35%;
+  border-right: solid 1px black;
 }
 
-.left-container img{
-    width: 400px;
-    margin: auto -20px;
+.left-container img {
+  width: 400px;
+  margin: auto -20px;
 }
 
-.right-container{
-    width: 65%;
-    background-color: rgb(21, 104, 124);
-    color: rgb(0, 0, 0);
-    border-left: solid 1px black;
+.right-container {
+  width: 65%;
+  background-color: rgb(21, 104, 124);
+  color: rgb(0, 0, 0);
+  border-left: solid 1px black;
 }
 
-.right-container h3{
-    padding-top: 40px;
-    padding-bottom: 40px;
-    padding-left: 190px;
-    font-size: 40px;
-    font-family: 'REM', sans-serif;
-    color: white;
+.right-container h3 {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 190px;
+  font-size: 40px;
+  font-family: "REM", sans-serif;
+  color: white;
 }
 
-
-.form-floating{
-    width: 80%;
-    margin: 10px auto;
-    color: rgb(3, 59, 73);
-    border: solid 1px rgb(0, 0, 0);
-    border-radius: 5px;
-    box-shadow: 3px 3px 20px 3px rgb(3, 59, 73);
+.form-floating {
+  width: 80%;
+  margin: 10px auto;
+  color: rgb(3, 59, 73);
+  border: solid 1px rgb(0, 0, 0);
+  border-radius: 5px;
+  box-shadow: 3px 3px 20px 3px rgb(3, 59, 73);
 }
 
-
-
-#btn-login{
-    margin: 70px 145px;
-    padding: 5px;
-    width: 60%;
-    height: 50px;
-    color: rgb(3, 59, 73);
-    background-color: white;
-    font-size: 20px;
-    border: none;
-    border-radius: 15px;
-    box-shadow: 3px 3px 20px 5px rgb(3, 59, 73);
-    transition: 1s;
+#btn-login {
+  margin: 70px 145px;
+  padding: 5px;
+  width: 60%;
+  height: 50px;
+  color: rgb(3, 59, 73);
+  background-color: white;
+  font-size: 20px;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 3px 3px 20px 5px rgb(3, 59, 73);
+  transition: 1s;
 }
 
-#btn-login:hover{
-    color: rgb(44, 134, 185);
+#btn-login:hover {
+  color: rgb(44, 134, 185);
 }
 
-#linkRegistro{
-    position: relative;
-    color: white;
-    text-decoration: none;
-    margin-top: 0px;
-    margin-left: 230px;
-    top: -50px;
+#linkRegistro {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  margin-top: 0px;
+  margin-left: 230px;
+  top: -50px;
 }
 
-#linkRegistro:hover{
-    text-decoration: underline;
+#linkRegistro:hover {
+  text-decoration: underline;
 }
 
-.ok{
-    margin-top: 20px;
-    display: block;
-    text-align: center;
-	width: 100%;
-	padding: 12px;
-	background-color: #1e6;
-	color: #fff;
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
+.ok {
+  margin-top: 20px;
+  display: block;
+  text-align: center;
+  width: 100%;
+  padding: 12px;
+  background-color: #1e6;
+  color: #fff;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.bad{
-    margin-top: 20px;
-    display: block;
-	text-align: center;
-	width: 100%;
-	padding: 15px;
-	background-color: #a22;
-	color: #e6e6e6;
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
+.bad {
+  margin-top: 20px;
+  display: block;
+  text-align: center;
+  width: 100%;
+  padding: 15px;
+  background-color: #a22;
+  color: #e6e6e6;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
+@media screen and (max-width: 1366px) {
+  #btn-login {
+    margin: 70px 130px;
+  }
+  #linkRegistro {
+    margin-left: 180px;
+  }
+  .right-container h3 {
+    padding-left: 150px;
+  }
+  .left-container img {
+    margin: auto -35px;
+  }
+}
